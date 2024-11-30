@@ -1,5 +1,11 @@
+@font-face {
+    font-family: 'Lilex Nerd Font';
+    src: url('fonts/LilexNerdFont-Regular.ttf') format('truetype');
+}
+
+
 body {
     color: white;
     background-color: rgb(24, 24, 24);
-    font-family: Lilex Nerd Font, sans-serif;
+    font-family: Lilex Nerd Font, Arial;
 }
