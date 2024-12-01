@@ -3,9 +3,67 @@
     src: url('fonts/LilexNerdFont-Regular.ttf') format('truetype');
 }
 
-
 body {
     color: white;
     background-color: rgb(24, 24, 24);
-    font-family: Lilex Nerd Font, Arial;
+    margin: 0;
+    font-family: Arial, Lilex Nerd Font, sans-serif;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+
+
+
+/* Sidebar styling */
+
+.sidebar {
+    width: 200px;
+    height: 100vh; /* Full viewport height */
+    background-color: #1e1e1e;
+    /* background-color: #232323; */
+    color: white;
+    position: fixed; /* Sticks to the left side */
+    left: 0;
+    top: 0;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Sidebar heading */
+.sidebar h2 {
+    margin: 0 0 20px;
+    font-size: 20px;
+}
+
+/* Sidebar navigation links */
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: rgb(118, 118, 118);
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757;
+}
+
+/* Main content area */
+.content {
+    margin-left: 200px;
+    padding: 20px;
 }
