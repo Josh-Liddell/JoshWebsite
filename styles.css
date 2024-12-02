@@ -7,7 +7,7 @@ body {
     color: white;
     background-color: rgb(24, 24, 24);
     margin: 0;
-    font-family: Arial, Lilex Nerd Font, sans-serif;
+    font-family: Verdana, Arial;
     margin-left: 10%;
     margin-right: 10%;
 }
@@ -19,7 +19,7 @@ body {
 /* Sidebar styling */
 
 .sidebar {
-    width: 200px;
+    width: 175px;
     height: 100vh; /* Full viewport height */
     background-color: #1e1e1e;
     /* background-color: #232323; */
@@ -52,6 +52,7 @@ body {
     text-decoration: none;
     color: rgb(118, 118, 118);
     font-size: 18px;
+    font-family: Verdana, Arial;
     display: block;
     padding: 10px;
     border-radius: 5px;
