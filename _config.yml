@@ -1,3 +1,36 @@
-permalink: pretty
-domain: joshliddell.com       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
-url: https://joshliddell.com # the base hostname and protocol for your site, e.g. http://example.com
+# Title of your site
+title: Josh's Website
+
+# Description of your site (for SEO and meta tags)
+description: My Portfolio Website
+
+# Custom URL for your site (your custom domain, e.g., myawesomesite.com)
+url: https://www.joshliddell.com  # Change this to your custom domain
+
+# Base URL for a site hosted in a sub-directory (if needed, leave empty for root domain)
+baseurl: ""  # Leave this empty for a root domain or set a path if your site is hosted in a subdirectory
+
+# Specify a theme (optional, there are many Jekyll themes available)
+# theme: jekyll-theme-minimal  # You can change this to any GitHub Pages theme
+
+# Markdown processor
+# markdown: kramdown
+
+# Permalinks structure (optional, controls URL structure for your posts)
+# permalink: /:year/:month/:day/:title/
+
+# Whether to enable pagination for posts (optional, useful for blogs)
+# paginate: 5
+
+# Setting to use Jekyll plugins (optional, only add if needed)
+# plugins:
+  # - jekyll-seo-tag  # Optional: Adds SEO tags to your site
+
+# Specify if you want to include drafts or other settings
+# drafts: true
+
+# Define any custom variables you want to use throughout your site
+# (This is optional, but can be helpful for advanced customization)
+# my_custom_variable: "Some custom value"
+
+# Other Jekyll-related settings can go here as needed
