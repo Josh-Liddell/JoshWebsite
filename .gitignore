@@ -1,1 +1,31 @@
-/templates
+# Ignore Jekyll build folder
+_site/
+
+# Ignore Jekyll cache files
+.jekyll-cache/
+
+# Ignore temporary files created by editors
+*.swp
+*.sublime-project
+*.sublime-workspace
+*.vscode/
+*~
+
+# Ignore logs and temporary files
+.log
+*.tmp
+*.bak
+
+# Ignore bundle dependencies (if you're using Bundler)
+vendor/
+.bundle/
+
+# Ignore Gemfile.lock if you want to keep Gemfile platform-independent
+Gemfile.lock
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore Ruby temporary files
+*.gem
