@@ -1,15 +1,15 @@
 - name: Home
   link: /
-  icon:
+  icon: nf nf-fa-home
 - name: Experience
   link: 
-  icon:
+  icon: nf nf-md-monitor_account
 - name: Projects
   link: 
-  icon:
+  icon: nf nf-fa-folder_open
 - name: Stack
   link: 
-  icon:
+  icon: nf nf-md-checkbox_multiple_blank_outline
 - name: About
   link: /about.html
-  icon:
+  icon: nf nf-oct-question

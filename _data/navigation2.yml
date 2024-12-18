@@ -1,0 +1,12 @@
+- name: GitHub  
+  link: 
+  icon: nf nf-fa-github_alt
+- name: LinkedIn
+  link: 
+  icon: nf nf-dev-linkedin
+- name: Instagram
+  link: 
+  icon: nf nf-md-instagram
+- name: Email
+  link: 
+  icon: nf nf-md-gmail
