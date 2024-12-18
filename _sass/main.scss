@@ -1,21 +1,14 @@
-.sidebar ul li a.current {
-    // font-weight: bold;
-    // color: #007bff;
-    color: white;
-    background-color: #484849;
-}
-
-
 body {
     margin: 0;
     font-family: Verdana, sans-serif;
     color: white;
-    background-color: rgb(24, 24, 24)
+    background-color: rgb(24, 24, 24);
+    min-height: 100vh; /* Change from height to min-height */
 }
 
 .container {
     display: flex;
-    height: 100vh;
+    min-height: 100vh; /* Change from height to min-height */
 }
 
 .header {
@@ -31,8 +24,10 @@ body {
     background-color: #1e1e1e;
     color: #fff;
     padding: 20px;
-    margin-right: 100px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    position: fixed; /* Fix the sidebar position */
+    height: 100vh; /* Make sidebar full viewport height */
+    overflow-y: auto; /* Add scrollbar if content is too long */
 }
 
 .sidebar ul {
@@ -58,7 +53,45 @@ body {
     color: white;
 }
 
+
+.sidebar ul li a.current {
+    // font-weight: bold;
+    // color: #007bff;
+    color: white;
+    background-color: #484849;
+}
+
+
 .main-content {
     display: flex;
     flex-direction: column; /* Stack items vertically */
+    margin-top: 50px;
+    margin-right: 200px;
+    margin-left: 200px;
+    margin-left: 370px; /* Adjust left margin to account for fixed sidebar (170px + 20px padding × 2) */
+}
+
+.main-content h1 {
+    font-size: 40px;  /* or any size you want */
+    margin-bottom: 0;
+}
+
+.main-content h2 {
+    margin-top: 50px;
+}
+
+.main-content img {
+    width: 400px; /* Shrinks the image to 300px wide */
+    height: auto; /* Maintains the image's aspect ratio */
+    border-radius: 15px; /* Rounds the corners of the image */
+}
+
+.subtitle {
+    color: rgb(118, 118, 118);
+}
+
+.projects {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
 }

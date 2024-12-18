@@ -1,12 +1,12 @@
 - name: GitHub  
-  link: 
+  link: https://github.com/Josh-Liddell 
   icon: nf nf-fa-github_alt
 - name: LinkedIn
-  link: 
+  link: https://www.linkedin.com/in/joshliddell/ 
   icon: nf nf-dev-linkedin
 - name: Instagram
-  link: 
+  link: https://www.instagram.com/
   icon: nf nf-md-instagram
 - name: Email
-  link: 
+  link: mailto:joshua.liddell21@gmail.com  
   icon: nf nf-md-gmail
