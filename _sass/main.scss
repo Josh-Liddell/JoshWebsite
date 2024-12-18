@@ -1,3 +1,62 @@
-.current {
-    color: green;
+.sidebar ul li a.current {
+    font-weight: bold;
+    color: white;
+    // color: #007bff;
+}
+
+
+body {
+    margin: 0;
+    font-family: Verdana, sans-serif;
+    color: white;
+    background-color: rgb(24, 24, 24)
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.header {
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Horizontally centers the content */
+    margin-bottom: 25px;
+  }
+
+.sidebar {
+    display: flex; /* Flex display for children */
+    flex-direction: column; /* Stack items vertically */
+    width: 150px;
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 15px;
+    margin-right: 100px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    display: block;
+    color: rgb(118, 118, 118);
+    transition: color 0.3s ease-in-out;
+}
+
+.sidebar ul li a:hover {
+    color: white;
+
+}
+
+.main-content {
+    display: flex; /* Flex display for children */
+    flex-direction: column; /* Stack items vertically */
 }

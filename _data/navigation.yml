@@ -1,4 +1,15 @@
 - name: Home
   link: /
+  icon:
+- name: Experience
+  link: 
+  icon:
+- name: Projects
+  link: 
+  icon:
+- name: Stack
+  link: 
+  icon:
 - name: About
   link: /about.html
+  icon:
