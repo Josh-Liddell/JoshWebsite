@@ -10,8 +10,6 @@ url: https://www.joshliddell.com  # Change this to your custom domain
 # Base URL for a site hosted in a sub-directory (if needed, leave empty for root domain)
 baseurl: ""  # Leave this empty for a root domain or set a path if your site is hosted in a subdirectory
 
-permalink: pretty
-
 # Specify a theme (optional, there are many Jekyll themes available)
 # theme: jekyll-theme-minimal  # You can change this to any GitHub Pages theme
 

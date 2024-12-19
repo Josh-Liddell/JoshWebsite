@@ -29,3 +29,5 @@ Thumbs.db
 
 # Ignore Ruby temporary files
 *.gem
+
+.sass-cache
