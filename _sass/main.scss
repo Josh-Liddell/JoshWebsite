@@ -24,7 +24,7 @@ body {
     background-color: #1e1e1e;
     color: #fff;
     padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
     position: fixed; /* Fix the sidebar position */
     height: 100vh; /* Make sidebar full viewport height */
     overflow-y: auto; /* Add scrollbar if content is too long */
@@ -56,8 +56,9 @@ body {
 
 .sidebar ul li a.current {
     color: white;
-    background-color: #2f2f2f;
-    border: 0.5px solid #4e4e4e;
+    background-color: #2d2d2d;
+    border: 0.5px solid #3e3e3e;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -122,4 +123,14 @@ body {
 .homebuttons:hover {
     background-color: #232323;
     color:rgb(161, 161, 161)
+}
+
+
+
+.aboutsections {
+    display: flex;
+}
+
+.aboutsections h3 {
+    margin-right: 50px;
 }
