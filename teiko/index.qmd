@@ -160,7 +160,7 @@ We see that *cd8_t_cell* and *nk_cell* are closely related; however, the distrib
 
 ## Database Schema
 <iframe src="https://dbdiagram.io/e/67f2fa144f7afba1848b508d/67f2fa1e4f7afba1848b5118"
-        style="width: 100%; height: 80%; border: none;"
+        style="width: 2000px; height: 600px; border: none;"
         allowfullscreen>
 </iframe>
 
