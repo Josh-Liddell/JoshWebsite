@@ -208,7 +208,7 @@ Joshua Liddell
 </section>
 <section id="python-part-1" class="slide level2">
 <h2>Python Part 1</h2>
-<p>Converting cell counts to <strong><em>relative frequency</em></strong></p>
+<p>Calculating <strong><em>relative frequency</em></strong> values based on cell counts</p>
 <div class="sourceCode" id="cb1" data-code-line-numbers="4|6-7|9-16|27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href=""></a></span>
 <span id="cb1-3"><a href=""></a><span class="co"># Reading to dataframe and creating total count col</span></span>
@@ -239,8 +239,8 @@ Joshua Liddell
 </section>
 <section id="output-preview" class="slide level2 smaller">
 <h2>Output Preview</h2>
-<div id="f383a829" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="41">
+<div id="61fba2e6" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -318,42 +318,132 @@ Joshua Liddell
 <section id="python-part-2" class="slide level2">
 <h2>Python Part 2</h2>
 <!-- Showing my code for the boxplot -->
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="bu">print</span>(<span class="st">"Creating a boxplot here"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This time I included the response column when creating the relative frequencies dataframe</p>
+<div class="sourceCode" id="cb2" data-code-line-numbers="5-7|9-11|13-15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href=""></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb2-3"><a href=""></a></span>
+<span id="cb2-4"><a href=""></a></span>
+<span id="cb2-5"><a href=""></a><span class="co"># Filtering to only treatment tr1 and PBMC samples</span></span>
+<span id="cb2-6"><a href=""></a>df3 <span class="op">=</span> df[(df[<span class="st">'treatment'</span>] <span class="op">==</span> <span class="st">'tr1'</span>) <span class="op">&amp;</span> (df[<span class="st">'sample_type'</span>] <span class="op">==</span> <span class="st">'PBMC'</span>)]</span>
+<span id="cb2-7"><a href=""></a>keeplist <span class="op">=</span> df3[<span class="st">'sample'</span>].tolist()</span>
+<span id="cb2-8"><a href=""></a></span>
+<span id="cb2-9"><a href=""></a><span class="co"># Creating filtered rel_freq df and dropping unneeded columns</span></span>
+<span id="cb2-10"><a href=""></a>filtered_df <span class="op">=</span> df2[df2[<span class="st">'sample'</span>].isin(keeplist)].drop(columns<span class="op">=</span>[<span class="st">'total_count'</span>, <span class="st">'count'</span>]).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-11"><a href=""></a>filtered_df[<span class="st">'response'</span>] <span class="op">=</span> filtered_df[<span class="st">'response'</span>].replace({<span class="st">'y'</span>: <span class="st">'responder'</span>, <span class="st">'n'</span>: <span class="st">'non-responder'</span>})</span>
+<span id="cb2-12"><a href=""></a></span>
+<span id="cb2-13"><a href=""></a><span class="co"># Visualizing the data</span></span>
+<span id="cb2-14"><a href=""></a>fig <span class="op">=</span> px.box(filtered_df, x<span class="op">=</span><span class="st">"population"</span>, y<span class="op">=</span><span class="st">"relative_freq"</span>, points<span class="op">=</span><span class="st">"all"</span>, color<span class="op">=</span><span class="st">'response'</span>)</span>
+<span id="cb2-15"><a href=""></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="boxplot" class="slide level2">
+<section id="boxplot" class="slide level2 smaller">
 <h2>Boxplot</h2>
+<div id="f3da8e05" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+        <script type="text/javascript">
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        </script>
+        <script type="module">import "https://cdn.plot.ly/plotly-3.0.1.min"</script>
+        
+</div>
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>                <div id="161fdd34-878a-4be3-a8c6-2bc8e9f94556" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("161fdd34-878a-4be3-a8c6-2bc8e9f94556")) {                    Plotly.newPlot(                        "161fdd34-878a-4be3-a8c6-2bc8e9f94556",                        [{"alignmentgroup":"True","boxpoints":"all","hovertemplate":"response=responder\u003cbr\u003epopulation=%{x}\u003cbr\u003erelative_freq=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"responder","marker":{"color":"#636efa"},"name":"responder","notched":false,"offsetgroup":"responder","orientation":"v","showlegend":true,"x":["b_cell","cd8_t_cell","cd4_t_cell","nk_cell","monocyte","b_cell","cd8_t_cell","cd4_t_cell","nk_cell","monocyte","b_cell","cd8_t_cell","cd4_t_cell","nk_cell","monocyte","b_cell","cd8_t_cell","cd4_t_cell","nk_cell","monocyte","b_cell","cd8_t_cell","cd4_t_cell","nk_cell","monocyte","b_cell","cd8_t_cell","cd4_t_cell","nk_cell","monocyte"],"x0":" ","xaxis":"x","y":{"dtype":"f8","bdata":"MzMzMzMz0z+amZmZmZnJP2ZmZmZmZtY\u002fmpmZmZmZqT+amZmZmZm5PzMzMzMzM9M\u002fKVyPwvUozD+amZmZmZnZP3sUrkfhepQ\u002fuB6F61G4rj\u002fsUbgehevRP+F6FK5H4co\u002fMzMzMzMz0z97FK5H4Xq0P6RwPQrXo8A\u002fH4XrUbge1T9SuB6F61HIP1K4HoXrUdg\u002fmpmZmZmZqT+amZmZmZmpP0jhehSuR9E\u002f4XoUrkfhyj89CtejcD3aP+xRuB6F67E\u002fexSuR+F6pD9I4XoUrkfRP5qZmZmZmck\u002fw\u002fUoXI\u002fC1T8K16NwPQq3P5qZmZmZmbk\u002f"},"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","hovertemplate":"response=non-responder\u003cbr\u003epopulation=%{x}\u003cbr\u003erelative_freq=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"non-responder","marker":{"color":"#EF553B"},"name":"non-responder","notched":false,"offsetgroup":"non-responder","orientation":"v","showlegend":true,"x":["b_cell","cd8_t_cell","cd4_t_cell","nk_cell","monocyte","b_cell","cd8_t_cell","cd4_t_cell","nk_cell","monocyte","b_cell","cd8_t_cell","cd4_t_cell","nk_cell","monocyte","b_cell","cd8_t_cell","cd4_t_cell","nk_cell","monocyte","b_cell","cd8_t_cell","cd4_t_cell","nk_cell","monocyte"],"x0":" ","xaxis":"x","y":{"dtype":"f8","bdata":"mpmZmZmZ2T+amZmZmZnJPwAAAAAAANA\u002fuB6F61G4nj+4HoXrUbi+PwAAAAAAANA\u002fKVyPwvUozD8zMzMzMzPTP5qZmZmZmak\u002fCtejcD0Kxz\u002fXo3A9CtfTP5qZmZmZmck\u002fAAAAAAAA0D+4HoXrUbieP+F6FK5H4co\u002fCtejcD0K1z9SuB6F61HIP6RwPQrXo9A\u002fexSuR+F6pD8zMzMzMzPDP+xRuB6F68E\u002fmpmZmZmZyT+4HoXrUbjOP3sUrkfheqQ\u002fUrgehetR2D8="},"y0":" ","yaxis":"y","type":"box"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"population"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"relative_freq"}},"legend":{"title":{"text":"response"},"tracegroupgap":0},"boxmode":"group"},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('161fdd34-878a-4be3-a8c6-2bc8e9f94556');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+</div>
 <!-- Sowing the actual boxplot -->
-<p>B. Which cell populations are significantly different in relative frequencies between responders and non-responders?</p>
-<!-- ###########################################
-DATABASE SECTION
-########################################### -->
+<p>We see that <em>cd8_t_cell</em> and <em>nk_cell</em> are closely related; however, the distributions of the other cells vary more significantly between responders and non-responders ADD STATS from chart</p>
+<!-- ########################################### DATABASE SECTION ########################################### -->
 </section>
 <section id="database-schema" class="slide level2">
 <h2>Database Schema</h2>
+<iframe src="https://dbdiagram.io/e/67f2fa144f7afba1848b508d/67f2fa1e4f7afba1848b5118" style="width: 100%; height: 100%; border: none;" allowfullscreen="">
+</iframe>
 </section>
-<section id="database-advantages" class="slide level2">
+<section id="database-advantages" class="slide level2 smaller">
 <h2>Database Advantages</h2>
-<p>What would be some advantages in capturing this information in a database?</p>
+<p>It is important to structure the database well especially when we are talking about hundreds of projects, patients, and samples.</p>
+<ul>
+<li>Multiple samples can be taken from a patient which may or may not be part of the same project.</li>
+<li>It is possible that a patient could have received several treatments.</li>
+</ul>
+<p>These are things that need to be taken into account when making a database. Designing a database well from the beginning allows operations to be scaled freely without running into critical issues with the data along the way.</p>
 </section>
 <section id="query-1" class="slide level2">
 <h2>Query 1</h2>
-<p>Please write a query to summarize the number of subjects available for each condition.</p>
+<p>A query to summarize the number of subjects available for each condition.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href=""></a><span class="kw">SELECT</span> condition, <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
+<span id="cb3-2"><a href=""></a><span class="kw">FROM</span> conditions</span>
+<span id="cb3-3"><a href=""></a><span class="kw">GROUP</span> <span class="kw">BY</span> condition</span>
+<span id="cb3-4"><a href=""></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="dv">2</span> <span class="kw">DESC</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="query-2" class="slide level2">
 <h2>Query 2</h2>
-<p>Returns all melanoma PBMC samples at baseline (time_from_treatment_start is 0) from patients who have treatment tr1.</p>
+<p>Returns all melanoma PBMC samples:</p>
+<ul>
+<li>at baseline (time_from_treatment_start is 0)</li>
+<li>from patients who have treatment tr1.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href=""></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb4-2"><a href=""></a><span class="kw">FROM</span> samples</span>
+<span id="cb4-3"><a href=""></a><span class="kw">WHERE</span> condition_name <span class="op">=</span> <span class="st">'melanoma'</span> </span>
+<span id="cb4-4"><a href=""></a>  <span class="kw">AND</span> sample_type <span class="op">=</span> <span class="st">'PBMC'</span></span>
+<span id="cb4-5"><a href=""></a>  <span class="kw">AND</span> patientid <span class="kw">IN</span> (<span class="kw">SELECT</span> patientid </span>
+<span id="cb4-6"><a href=""></a>                    <span class="kw">FROM</span> patient_treatment </span>
+<span id="cb4-7"><a href=""></a>                    <span class="kw">WHERE</span> treatmentid <span class="op">=</span> <span class="st">'tr1'</span> </span>
+<span id="cb4-8"><a href=""></a>                      <span class="kw">AND</span> GETDate() <span class="op">-</span> tr);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="additional-queries" class="slide level2">
+<section id="additional-queries" class="slide level2 scrollable">
 <h2>Additional Queries</h2>
 <ol type="a">
-<li><p>How many samples from each project</p></li>
-<li><p>How many responders/non-responders</p></li>
-<li><p>How many males, females</p></li>
+<li>How many samples from each project?</li>
 </ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href=""></a><span class="kw">SELECT</span> project_id, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> [<span class="fu">Count</span>]</span>
+<span id="cb5-2"><a href=""></a><span class="kw">FROM</span> samples</span>
+<span id="cb5-3"><a href=""></a><span class="kw">GROUP</span> <span class="kw">BY</span> project_id</span>
+<span id="cb5-4"><a href=""></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="dv">2</span> <span class="kw">DESC</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="a">
+<li>How many responders/non-responders?</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href=""></a><span class="kw">SELECT</span></span>
+<span id="cb6-2"><a href=""></a>  <span class="fu">COUNT</span>(<span class="cf">CASE</span> <span class="cf">WHEN</span> response <span class="op">=</span> <span class="st">'yes'</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">END</span>) <span class="kw">AS</span> yes_count,</span>
+<span id="cb6-3"><a href=""></a>  <span class="fu">COUNT</span>(<span class="cf">CASE</span> <span class="cf">WHEN</span> response <span class="op">=</span> <span class="st">'no'</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">END</span>) <span class="kw">AS</span> no_count</span>
+<span id="cb6-4"><a href=""></a><span class="kw">FROM</span> samples;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="a">
+<li>How many males, females?</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource sql number-lines code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href=""></a><span class="kw">SELECT</span></span>
+<span id="cb7-2"><a href=""></a>  <span class="fu">COUNT</span>(<span class="cf">CASE</span> <span class="cf">WHEN</span> sex <span class="op">=</span> <span class="st">'M'</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">END</span>) <span class="kw">AS</span> male_count,</span>
+<span id="cb7-3"><a href=""></a>  <span class="fu">COUNT</span>(<span class="cf">CASE</span> <span class="cf">WHEN</span> sex <span class="op">=</span> <span class="st">'F'</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">END</span>) <span class="kw">AS</span> female_count</span>
+<span id="cb7-4"><a href=""></a><span class="kw">FROM</span> patient;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="thank-you" class="slide level2">
 <h2>Thank you</h2>
-<p>Fun project! And thank you for considering me!</p>
+<p>A fun project! And thank you for considering me!</p>
 
 </section>
     </div>
