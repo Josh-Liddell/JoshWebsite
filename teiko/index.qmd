@@ -105,7 +105,7 @@ fig.show()
 
 
 
-## Boxplot
+## Boxplot {.smaller}
 ```{python}
 import pandas as pd
 import plotly.express as px
@@ -144,11 +144,12 @@ filtered_df = df2[df2['sample'].isin(keeplist)].drop(columns=['total_count', 'co
 filtered_df['response'] = filtered_df['response'].replace({'y': 'responder', 'n': 'non-responder'})
 
 fig = px.box(filtered_df, x="population", y="relative_freq", points="all", color='response')
+fig.update_layout(width=1000, height=500)
 fig.show()
 ```
 
 <!-- Sowing the actual boxplot -->
-<!-- We see that *cd8_t_cell* and *nk_cell* are closely related; however, the distributions of the other cells vary more significantly between responders and non-responders ADD STATS from chart -->
+We see that *cd8_t_cell* and *nk_cell* are closely related; however, the distributions of the other cells vary more significantly between responders and non-responders ADD STATS from chart
 
 
 
