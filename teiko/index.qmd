@@ -1,36 +1,62 @@
 ---
-title: "Teiko"
-author: "Josh Liddell"
-format: revealjs
+title: "Teiko Technical"
+author: "Joshua Liddell"
+format:
+  revealjs: 
+    theme: solarized
+    # smaller: true
+    scrollable: false
+    footer: "View all files on my [Github](https://github.com/josh-liddell)"
+
 ---
 
-## Getting up
 
-- Turn off alarm
-- Get out of bed
+## Python Part 1 
+Converting cell counts to ***relative frequency***
 
-For a preview of a line plot on a polar axis, see @fig-polar.
 
-```{python}
-#| label: fig-polar
-#| fig-cap: "A line plot on a polar axis"
+```{.python code-line-numbers="3-4|6-7|9-16|27"}
+import pandas as pd
 
-import numpy as np
-import matplotlib.pyplot as plt
+# Reading to dataframe and creating total count col
+df = pd.read_csv('cell-count.csv')
 
-r = np.arange(0, 2, 0.01)
-theta = 2 * np.pi * r
-fig, ax = plt.subplots(
-  subplot_kw = {'projection': 'polar'} 
-)
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
+populations = ['b_cell', 'cd8_t_cell', 'cd4_t_cell', 'nk_cell', 'monocyte']
+df['total_count'] = df[populations].sum(axis=1)
+
+# Reshaping the DataFrame using melt function to organize populations
+df2 = pd.melt(
+    df,
+    id_vars=['sample', 'total_count'],
+    value_vars=populations,
+    var_name='population',
+    value_name='count',)
+df2['relative_freq'] = df2['count'] / df2['total_count']
+
+# Sorting the values by the number in the sample column, and then by the population list order
+df2 = df2.sort_values(
+    by=['sample', 'population'],
+    key=lambda col: (
+        col.str.extract('(\d+)').astype(int)[0] if col.name == 'sample'
+        else col.map({name: i for i, name in enumerate(populations)})
+    )
+).reset_index(drop=True)
+
+df2.to_csv('output.csv', index=False)
 ```
 
-## Going to sleep
+## Output
+```{python}
+import plotly.express as px
+import plotly.io as pio
+gapminder = px.data.gapminder()
+gapminder2007 = gapminder.query("year == 2007")
+fig = px.scatter(gapminder2007, 
+                 x="gdpPercap", y="lifeExp", color="continent", 
+                 size="pop", size_max=60,
+                 hover_name="country")
+fig.show()
+```
 
-- Get in bed
-- Count sheep
 
+## Python Part 2

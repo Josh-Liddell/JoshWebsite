@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="index_files/libs/clipboard/clipboard.min.js"></script>
 <script src="index_files/libs/quarto-html/tabby.min.js"></script>
 <script src="index_files/libs/quarto-html/popper.min.js"></script>
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
@@ -9,8 +9,8 @@
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting-6c21014d9765ba549c6ebad95917e4d7.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.6">
 
-  <meta name="author" content="Josh Liddell">
-  <title>Teiko</title>
+  <meta name="author" content="Joshua Liddell">
+  <title>Teiko Technical</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,8 +28,73 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-bbe7401fe57d4b791b917637bb662036.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-2a4c8bc07c7bed3f644724215556eb12.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -121,46 +186,106 @@
       margin-right: 0; 
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Teiko</h1>
+  <h1 class="title">Teiko Technical</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Josh Liddell 
+Joshua Liddell 
 </div>
 </div>
 </div>
 
 </section>
-<section id="getting-up" class="slide level2">
-<h2>Getting up</h2>
-<ul>
-<li>Turn off alarm</li>
-<li>Get out of bed</li>
-</ul>
-<p>For a preview of a line plot on a polar axis, see <a href="#/fig-polar" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<section id="python-part-1" class="slide level2">
+<h2>Python Part 1</h2>
+<p>Converting cell counts to <strong><em>relative frequency</em></strong></p>
+<div class="sourceCode" id="cb1" data-code-line-numbers="3-4|6-7|9-16|27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href=""></a></span>
+<span id="cb1-3"><a href=""></a><span class="co"># Reading to dataframe and creating total count col</span></span>
+<span id="cb1-4"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">'cell-count.csv'</span>)</span>
+<span id="cb1-5"><a href=""></a></span>
+<span id="cb1-6"><a href=""></a>populations <span class="op">=</span> [<span class="st">'b_cell'</span>, <span class="st">'cd8_t_cell'</span>, <span class="st">'cd4_t_cell'</span>, <span class="st">'nk_cell'</span>, <span class="st">'monocyte'</span>]</span>
+<span id="cb1-7"><a href=""></a>df[<span class="st">'total_count'</span>] <span class="op">=</span> df[populations].<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-8"><a href=""></a></span>
+<span id="cb1-9"><a href=""></a><span class="co"># Reshaping the DataFrame using melt function to organize populations</span></span>
+<span id="cb1-10"><a href=""></a>df2 <span class="op">=</span> pd.melt(</span>
+<span id="cb1-11"><a href=""></a>    df,</span>
+<span id="cb1-12"><a href=""></a>    id_vars<span class="op">=</span>[<span class="st">'sample'</span>, <span class="st">'total_count'</span>],</span>
+<span id="cb1-13"><a href=""></a>    value_vars<span class="op">=</span>populations,</span>
+<span id="cb1-14"><a href=""></a>    var_name<span class="op">=</span><span class="st">'population'</span>,</span>
+<span id="cb1-15"><a href=""></a>    value_name<span class="op">=</span><span class="st">'count'</span>,)</span>
+<span id="cb1-16"><a href=""></a>df2[<span class="st">'relative_freq'</span>] <span class="op">=</span> df2[<span class="st">'count'</span>] <span class="op">/</span> df2[<span class="st">'total_count'</span>]</span>
+<span id="cb1-17"><a href=""></a></span>
+<span id="cb1-18"><a href=""></a><span class="co"># Sorting the values by the number in the sample column, and then by the population list order</span></span>
+<span id="cb1-19"><a href=""></a>df2 <span class="op">=</span> df2.sort_values(</span>
+<span id="cb1-20"><a href=""></a>    by<span class="op">=</span>[<span class="st">'sample'</span>, <span class="st">'population'</span>],</span>
+<span id="cb1-21"><a href=""></a>    key<span class="op">=</span><span class="kw">lambda</span> col: (</span>
+<span id="cb1-22"><a href=""></a>        col.<span class="bu">str</span>.extract(<span class="st">'(\d+)'</span>).astype(<span class="bu">int</span>)[<span class="dv">0</span>] <span class="cf">if</span> col.name <span class="op">==</span> <span class="st">'sample'</span></span>
+<span id="cb1-23"><a href=""></a>        <span class="cf">else</span> col.<span class="bu">map</span>({name: i <span class="cf">for</span> i, name <span class="kw">in</span> <span class="bu">enumerate</span>(populations)})</span>
+<span id="cb1-24"><a href=""></a>    )</span>
+<span id="cb1-25"><a href=""></a>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-26"><a href=""></a></span>
+<span id="cb1-27"><a href=""></a>df2.to_csv(<span class="st">'output.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="output" class="slide level2">
+<h2>Output</h2>
+<div id="141ab41d" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+        <script type="text/javascript">
+        window.PlotlyConfig = {MathJaxConfig: 'local'};
+        if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+        </script>
+        <script type="module">import "https://cdn.plot.ly/plotly-3.0.1.min"</script>
+        
+</div>
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.0.1.min.js"></script>                <div id="927826bc-3327-4922-bdd2-af25f6db61f0" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("927826bc-3327-4922-bdd2-af25f6db61f0")) {                    Plotly.newPlot(                        "927826bc-3327-4922-bdd2-af25f6db61f0",                        [{"hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003econtinent=Asia\u003cbr\u003egdpPercap=%{x}\u003cbr\u003elifeExp=%{y}\u003cbr\u003epop=%{marker.size}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Afghanistan","Bahrain","Bangladesh","Cambodia","China","Hong Kong, China","India","Indonesia","Iran","Iraq","Israel","Japan","Jordan","Korea, Dem. Rep.","Korea, Rep.","Kuwait","Lebanon","Malaysia","Mongolia","Myanmar","Nepal","Oman","Pakistan","Philippines","Saudi Arabia","Singapore","Sri Lanka","Syria","Taiwan","Thailand","Vietnam","West Bank and Gaza","Yemen, Rep."],"legendgroup":"Asia","marker":{"color":"#636efa","size":{"dtype":"i4","bdata":"A5rmAd3PCgDTqPcIkqLXANiBmU48g2oAq00vQngOUw0CxyMEdpyjATcQYgDEAZkHSV1cAF2OYwE2XewCVzsmAH7VOwAmvnoBD9srADzK2AKeAbkBIecwAFndFgqnum0FjiilATF5RQB\u002f8jYBO7gmAZacYQF13OADFAAVBZxQPQCf7FIB"},"sizemode":"area","sizeref":366300.86,"symbol":"circle"},"mode":"markers","name":"Asia","orientation":"v","showlegend":true,"x":{"dtype":"f8","bdata":"54R1iKR0jkDGpwAYAxndQPLPDOIDvZVAat\u002fcXx3HmkDRXRJnHV+zQHK\u002fQ1GfZeNAs193umsoo0CA7suZTamrQKmHaHTbqsZAbVUS2Q93sUBuowG80ezYQItUGFsE6t5A3XpND3ansUArajANQ+SYQBMZVvEIzdZASBtHrF8Z50B3hNOCh27EQFwgQfHTUchATsEaZ4svqEAAAAAAAICNQEjfpGlwDZFAmGn7VwzL1UCwrDQp5VukQLWpukf27KhAD0WBPrUl1UCiYpy\u002f5QTnQJ6xL9kwBK9ATIqPT4xYsECOHr+3kQvcQIOvr3VlIr1AkdJsHicTo0BqNLkYs6KnQP2FHjGK0aFA"},"xaxis":"x","y":{"dtype":"f8","bdata":"RIts5\u002fvpRUBxPQrXo+hSQIcW2c73A1BABoGVQ4vcTUAv3SQGgT1SQFpkO99PjVRA6iYxCKwsUECamZmZmalRQARWDi2yvVFA9ihcj8LFTUBI4XoUri9UQDvfT42XplRACtejcD0iUkBeukkMAtNQQB1aZDvfp1NAFIPAyqFlU0BkO99Pjf9RQIGVQ4tsj1JACKwcWmSzUEBGtvP91AhPQBSuR+F65E9AKVyPwvXoUkD0\u002fdR46V5QQHnpJjEI7FFAfT81XroxUkCR7Xw\u002fNf5TQNNNYhBYGVJA\u002ftR46SaJUkCamZmZmZlTQIGVQ4tsp1FADi2yne+PUkBeukkMAltSQNNNYhBYWU9A"},"yaxis":"y","type":"scatter"},{"hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003econtinent=Europe\u003cbr\u003egdpPercap=%{x}\u003cbr\u003elifeExp=%{y}\u003cbr\u003epop=%{marker.size}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Albania","Austria","Belgium","Bosnia and Herzegovina","Bulgaria","Croatia","Czech Republic","Denmark","Finland","France","Germany","Greece","Hungary","Iceland","Ireland","Italy","Montenegro","Netherlands","Norway","Poland","Portugal","Romania","Serbia","Slovak Republic","Slovenia","Spain","Sweden","Switzerland","Turkey","United Kingdom"],"legendgroup":"Europe","marker":{"color":"#EF553B","size":{"dtype":"i4","bdata":"i\u002fA2AGcefQCikp4ABnZFAOq8bwAAkEQACBScANhvUwC87k8ADBGkA+RW6QRyXaMADOuXAGubBAAesz4AlUN3A8ByCgD12PwA1p1GAOG9SwKUZaIA2OdTAXnhmgBOH1MAnageAL8waQKwzYkAZUZzAHfLPQQuX58D"},"sizemode":"area","sizeref":366300.86,"symbol":"circle"},"mode":"markers","name":"Europe","orientation":"v","showlegend":true,"x":{"dtype":"f8","bdata":"YBQEjwcxt0BYyjLEz6PhQG+70FyTc+BA8nhafkwWvUDPMSB7ZdzEQBTGFoKcjcxAH7qgvlNM1kCxbVFmzTnhQPmgZ7PiNuBAduCcEYHB3UC+TX\u002f2l2rfQHjuPVya5NpAQni0cTyW0UALYwtBmarhQCxlGeJ\u002f3ONAvJaQD27m20BL58Oz8hLCQJbnwd299+FAVmXfFaYZ6ECjC+pb9g7OQFVNEHVpB9RA09nJ4DwcxUBbI4JxRB3DQGB2Tx6UPdJAcsRafBAq2UAwKqkTRCXcQP+ye\u002fJ3iOBAGH0FaU1Q4kCSCI1gI4XAQOPfZ1xoNuBA"},"xaxis":"x","y":{"dtype":"f8","bdata":"UI2XbhIbU0CTGARWDvVTQE5iEFg53FNASgwCK4e2UkC4HoXrUUBSQB1aZDvf71JAyXa+nxofU0Boke18P5VTQHnpJjEI1FNANV66SQwqVEBEi2zn+9lTQPT91Hjp3lNAFIPAyqFVUkCcxCCwcnBUQHE9CtejuFNAbef7qfEiVECYbhKDwKJSQFTjpZvE8FNABoGVQ4sMVEB56SYxCORSQIPAyqFFhlNAWDm0yHYeUkDjpZvEIIBSQN9PjZduqlJAJQaBlUN7U0BOYhBYOTxUQH9qvHSTOFRAwJ8aL91sVEB9PzVeuvFRQDMzMzMz21NA"},"yaxis":"y","type":"scatter"},{"hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003econtinent=Africa\u003cbr\u003egdpPercap=%{x}\u003cbr\u003elifeExp=%{y}\u003cbr\u003epop=%{marker.size}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Algeria","Angola","Benin","Botswana","Burkina Faso","Burundi","Cameroon","Central African Republic","Chad","Comoros","Congo, Dem. Rep.","Congo, Rep.","Cote d'Ivoire","Djibouti","Egypt","Equatorial Guinea","Eritrea","Ethiopia","Gabon","Gambia","Ghana","Guinea","Guinea-Bissau","Kenya","Lesotho","Liberia","Libya","Madagascar","Malawi","Mali","Mauritania","Mauritius","Morocco","Mozambique","Namibia","Niger","Nigeria","Reunion","Rwanda","Sao Tome and Principe","Senegal","Sierra Leone","Somalia","South Africa","Sudan","Swaziland","Tanzania","Togo","Tunisia","Uganda","Zambia","Zimbabwe"],"legendgroup":"Africa","marker":{"color":"#00cc96","size":{"dtype":"i4","bdata":"4J\u002f8AXyFvQDqQ3sA2wIZALuZ2gBpB4AAJQYOAY6qQgBXO5wAMNkKACfS2QMi\u002fjkA4dwSAfaSBwBfvcgEIWkIAFneSgCPeo8EEzMWACfDGQD6BF0BpsqXACl2FgBBXh8C6bUeAFa8MACyHVwApnkkAedaywAzl7cAseUxAEIWEwD3FwMCKHAwAahbHwCRwsQAfGkMCI4tDACsM4cAmwsDAOUvuwAywl0ANSSLAIRanwLBVoUCCkoRAPj2RQLL\u002f1YAPs2cAN4avQHzOrMAZ9q7AA=="},"sizemode":"area","sizeref":366300.86,"symbol":"circle"},"mode":"markers","name":"Africa","orientation":"v","showlegend":true,"x":{"dtype":"f8","bdata":"ba0vEl5PuEClaVA0O72yQA5qv7UjhZZA26LMBu2MyEDb2y3JIQSTQKHhg40h4XpAFjWYhmHon0BkkSbeIRCGQOI\u002f3UBBoJpAEj5K2y7RjkA2yMlp1FhxQIwPs5cdYaxAWTFcHQAjmECsJ\u002fOP9kSgQKSK4lUuzbVAaJHtfAu9x0DPCMrI9AqEQJEHx9FxloVAIVnABD7LyUCOc5tw\u002f4WHQNRgGoZvvpRAcXkH0zt1jUCc8BKc2hmCQO3Vx0P\u002f3JZAFRqIZVOFmEB15h4SHuh5QMYzaOi\u002fjMdAMv\u002fomxRTkEBSoKqdzLqHQAqfrYNTSpBA5nXEIZssnEA1KQXdfmbFQI4ev7dZ2K1AvceZJny9iUC7YkZ4D8uyQEgHkEZqXYNA3lSkwuh3n0DdCfZfH\u002fa9QAWrjyy1+IpAZof4h735mEAPnZ5348GaQOgk73dT9IpABbhq6CDxjECGcw0z1BrCQCveyDzKVKRADW5rC3uhsUDhQh7B7U2RQKkf5XHCl4tAZMxdS+y0u0AXfnA+hYGQQEDc1avY3JNA2On2SFlbfUA="},"xaxis":"x","y":{"dtype":"f8","bdata":"JQaBlUMTUkAhsHJokV1FQHe+nxovXUxAd76fGi9dSUD2KFyPwiVKQArXo3A9ykhA16NwPQo3SUADK4cW2V5GQBfZzvdTU0lAfT81XrpJUEBCYOXQIjtHQPCnxks3qUtARIts5\u002fspSEBoke18P2VLQBSDwMqh1VFAJjEIrBzKSUCF61G4HgVNQPCnxks3eUpArkfhehReTEDTTWIQWLlNQIlBYOXQAk5AN4lBYOUATECNbOf7qTFHQK5H4XoUDktAsp3vp8ZLRUAQWDm0yNZGQLByaJHtfFJAZBBYObS4TUAQWDm0yCZIQLKd76fGO0tA0SLb+X4KUEAlBoGVQzNSQNEi2\u002fl+ylFA0SLb+X4KRUCJFtnO93NKQOXQItv5bkxAy6FFtvNtR0A\u002fNV66SRxTQOXQItv5HkdAbxKDwMphUEAOLbKd74dPQGQQWDm0SEVAMQisHFoUSEAIrBxaZKtIQLpJDAIrR01AWDm0yHbOQ0AZBFYOLUJKQPYoXI\u002fCNU1AUI2XbhJ7UkBMN4lBYMVJQP3UeOkmMUVAdZMYBFa+RUA="},"yaxis":"y","type":"scatter"},{"hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003econtinent=Americas\u003cbr\u003egdpPercap=%{x}\u003cbr\u003elifeExp=%{y}\u003cbr\u003epop=%{marker.size}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Argentina","Bolivia","Brazil","Canada","Chile","Colombia","Costa Rica","Cuba","Dominican Republic","Ecuador","El Salvador","Guatemala","Haiti","Honduras","Jamaica","Mexico","Nicaragua","Panama","Paraguay","Peru","Puerto Rico","Trinidad and Tobago","United States","Uruguay","Venezuela"],"legendgroup":"Americas","marker":{"color":"#ab63fa","size":{"dtype":"i4","bdata":"Z\u002fVmArAliwAXVVMLPX79AUV8+ADe26IC\u002fBM\u002fAJs1rgDGNI4AIOXRACjkaQAA2b8AHr6BAHMxcgDkayoA26R6BlyZVgC9eDEAi7tlAMWKtQFbKDwAYB8QAOsH8xHImjQANgWOAQ=="},"sizemode":"area","sizeref":366300.86,"symbol":"circle"},"mode":"markers","name":"Americas","orientation":"v","showlegend":true,"x":{"dtype":"f8","bdata":"ICQLmLD1yECcwd8vRtytQGkAb4HmtMFAB7Ezhee74UCGONbF0bnJQPruVpaUXrtAqU2c3IfWwkCBs5QsDXrBQB5Av+9fibdA5fbLJ0PZukCuvOR\u002fWmC2QLQh\u002f8wMQrRAECIZcozGkkAInKVkqbirQOu12VjhmLxAQQ5KmMlkx0BSRIZVpHqlQHui68KXKMNA4KKTpdZMsECIf9jS5\u002fC8QKJ6a2At4NJAdF5jlyCW0UDr\u002fxzm9PjkQDCeQUO7ucRAW5TZIOdLxkA="},"xaxis":"x","y":{"dtype":"f8","bdata":"FK5H4XrUUkD6fmq8dGNQQClcj8L1GFJAbxKDwMopVEAIrBxaZKNTQDeJQWDlOFJANV66SQyyU0C28\u002f3UeJFTQNejcD0KD1JAVg4tsp2\u002fUkDVeOkmMfhRQH9qvHSTkFFAaJHtfD91TkDqJjEIrIxRQD81XrpJJFJAFK5H4XoMU0Coxks3iTlSQOx8PzVe4lJA46WbxCDwUUBt5\u002fup8dpRQDu0yHa+r1NAI9v5fmp0UUBzaJHtfI9TQH9qvHSTGFNAK4cW2c5vUkA="},"yaxis":"y","type":"scatter"},{"hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003econtinent=Oceania\u003cbr\u003egdpPercap=%{x}\u003cbr\u003elifeExp=%{y}\u003cbr\u003epop=%{marker.size}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Australia","New Zealand"],"legendgroup":"Oceania","marker":{"color":"#FFA15A","size":{"dtype":"i4","bdata":"AM03ATvNPgA="},"sizemode":"area","sizeref":366300.86,"symbol":"circle"},"mode":"markers","name":"Oceania","orientation":"v","showlegend":true,"x":{"dtype":"f8","bdata":"54cRwmvQ4EAEHEKVQJjYQA=="},"xaxis":"x","y":{"dtype":"f8","bdata":"16NwPQpPVECTGARWDg1UQA=="},"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"gdpPercap"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"lifeExp"}},"legend":{"title":{"text":"continent"},"tracegroupgap":0,"itemsizing":"constant"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('927826bc-3327-4922-bdd2-af25f6db61f0');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
 
-<img data-src="index_files/figure-revealjs/fig-polar-output-1.png" class="r-stretch quarto-figure-center" id="fig-polar"><p class="caption">
-Figure&nbsp;1: A line plot on a polar axis
-</p></section>
-<section id="going-to-sleep" class="slide level2">
-<h2>Going to sleep</h2>
-<ul>
-<li>Get in bed</li>
-<li>Count sheep</li>
-</ul>
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+</div>
+</section>
+<section id="python-part-2" class="slide level2">
+<h2>Python Part 2</h2>
 
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-
+<p>View all files on my <a href="https://github.com/josh-liddell">Github</a></p>
 </div>
 </div></div>
 
