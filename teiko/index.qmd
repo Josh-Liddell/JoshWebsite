@@ -4,7 +4,7 @@ author: "Joshua Liddell"
 format:
   revealjs: 
     theme: solarized
-    scrollable: false
+    scrollable: true
     footer: "View all files on my [Github](https://github.com/josh-liddell)"
     # css: styles.css
     # smaller: true
@@ -105,8 +105,7 @@ fig.show()
 
 
 
-## Boxplot {.smaller}
-
+## Boxplot
 ```{python}
 import pandas as pd
 import plotly.express as px
@@ -135,27 +134,21 @@ df2 = df2.sort_values(
     )
 ).reset_index(drop=True)
 
-# df2.to_csv('output.csv', index=False)
 
 df = pd.read_csv('cell-count.csv')
 
-# Filtering to only treatment tr1 and PBMC samples
 df3 = df[(df['treatment'] == 'tr1') & (df['sample_type'] == 'PBMC')]
 keeplist = df3['sample'].tolist()
-# print(keeplist)
 
 filtered_df = df2[df2['sample'].isin(keeplist)].drop(columns=['total_count', 'count']).reset_index(drop=True)
 filtered_df['response'] = filtered_df['response'].replace({'y': 'responder', 'n': 'non-responder'})
-
-# filtered_df.head()
-
 
 fig = px.box(filtered_df, x="population", y="relative_freq", points="all", color='response')
 fig.show()
 ```
 
 <!-- Sowing the actual boxplot -->
-We see that *cd8_t_cell* and *nk_cell* are closely related; however, the distributions of the other cells vary more significantly between responders and non-responders ADD STATS from chart
+<!-- We see that *cd8_t_cell* and *nk_cell* are closely related; however, the distributions of the other cells vary more significantly between responders and non-responders ADD STATS from chart -->
 
 
 
@@ -165,13 +158,10 @@ We see that *cd8_t_cell* and *nk_cell* are closely related; however, the distrib
 <!-- ########################################### DATABASE SECTION ########################################### -->
 
 ## Database Schema
-
-
 <iframe src="https://dbdiagram.io/e/67f2fa144f7afba1848b508d/67f2fa1e4f7afba1848b5118"
-        style="width: 100%; height: 100%; border: none;"
+        style="width: 100%; height: 80%; border: none;"
         allowfullscreen>
 </iframe>
-
 
 
 
@@ -182,7 +172,6 @@ It is important to structure the database well especially when we are talking ab
 - It is possible that a patient could have received several treatments. 
 
 These are things that need to be taken into account when making a database. Designing a database well from the beginning allows operations to be scaled freely without running into critical issues with the data along the way.
-
 
 ## Query 1
 A query to summarize the number of subjects available for each condition.
@@ -212,7 +201,7 @@ WHERE condition_name = 'melanoma'
 ```
 
 
-## Additional Queries {.scrollable}
+## Additional Queries
 
 a. How many samples from each project?
 ```{.sql}
