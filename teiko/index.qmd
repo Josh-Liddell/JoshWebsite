@@ -5,7 +5,7 @@ format:
   revealjs: 
     theme: solarized
     scrollable: true
-    footer: "View all files on my [Github](//https://github.com/Josh-Liddell/cell-counts)"
+    footer: "View all files on my [Github](https://github.com/Josh-Liddell/cell-counts)"
     transition: slide
     transition-speed: fast
     # css: styles.css
@@ -224,7 +224,7 @@ Returns all melanoma PBMC samples:
 - from patients who have treatment tr1.
 
 ```{.sql}
-SELECT 
+SELECT *
 FROM samples s
   JOIN patient p ON p.id = s.patient_id
   JOIN conditions c ON c.id = p.condition_id
