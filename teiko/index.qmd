@@ -5,15 +5,19 @@ format:
   revealjs: 
     theme: solarized
     scrollable: true
-    footer: "View all files on my [Github](https://github.com/josh-liddell)"
+    footer: "View all files on my [Github](//https://github.com/Josh-Liddell/cell-counts)"
+    transition: slide
+    transition-speed: fast
     # css: styles.css
     # smaller: true
-
 ---
 
 
-## Python Part 1 
+## Python Part 1 {.smaller}
 Calculating ***relative frequency*** values based on cell counts
+
+
+
 ```{.python code-line-numbers="4|6-7|9-16|27"}
 import pandas as pd
 
@@ -44,9 +48,8 @@ df2 = df2.sort_values(
 df2.to_csv('output.csv', index=False)
 ```
 
-
-
-## Output Preview {.smaller}
+## CSV Preview {.smaller}
+<br><br>
 ```{python}
 import pandas as pd
 import plotly.graph_objects as go
@@ -80,7 +83,12 @@ df2.head()
 
 
 
-## Python Part 2
+
+
+
+
+
+## Python Part 2 {.smaller}
 <!-- Showing my code for the boxplot -->
 This time I included the response column when creating the relative frequencies dataframe
 ```{.python code-line-numbers="5-7|9-11|13-15"}
@@ -106,6 +114,7 @@ fig.show()
 
 
 ## Boxplot {.smaller}
+<!-- Sowing the actual boxplot -->
 ```{python}
 import pandas as pd
 import plotly.express as px
@@ -148,22 +157,38 @@ fig.update_layout(width=1000, height=500)
 fig.show()
 ```
 
-<!-- Sowing the actual boxplot -->
-We see that *cd8_t_cell* and *nk_cell* are closely related; however, the distributions of the other cells vary more significantly between responders and non-responders ADD STATS from chart
 
 
 
 
+## Insights
+::: {.incremental}
+- We see that *cd8_t_cell* and *nk_cell* are closely related; however, the distributions of the other cells vary more significantly between responders and non-responders.
+- **For example** monocyte non-responder values range between 0.12 and 0.38 rel_freq. Whereas responders for the same population range between 0.04 and 0.13. 
+- In the case of b_cell we can see that the values for non-responders cover a much broader range of rel_freq values than the responder values that are clustered much closer together.
+:::
 
 
-<!-- ########################################### DATABASE SECTION ########################################### -->
+ 
+
+
+
+<!-- #### DATABASE SECTION #### -->
 
 ## Database Schema
-<iframe src="https://dbdiagram.io/e/67f2fa144f7afba1848b508d/67f2fa1e4f7afba1848b5118"
-        style="width: 2000px; height: 600px; border: none;"
-        allowfullscreen>
-</iframe>
 
+<iframe 
+  src="https://dbdiagram.io/e/67f2fa144f7afba1848b508d/67f2fa1e4f7afba1848b5118"
+  style="width: 100%; height: 80%; border: none;"
+  allowfullscreen>
+</iframe>
+<script>
+  const iframe = document.querySelector('iframe');
+  iframe.addEventListener('load', () => {
+    // Trigger a resize event inside the iframe
+    iframe.contentWindow.dispatchEvent(new Event('resize'));
+  });
+</script>
 
 
 ## Database Advantages {.smaller}
@@ -174,12 +199,20 @@ It is important to structure the database well especially when we are talking ab
 
 These are things that need to be taken into account when making a database. Designing a database well from the beginning allows operations to be scaled freely without running into critical issues with the data along the way.
 
+I chose to design my database this way because it organizes the data efficiently, ensures data integrity through normalization, and allows for scalable relationships between entities, making future queries and updates easier to manage.
+
+
+
+
+
 ## Query 1
 A query to summarize the number of subjects available for each condition.
+
 ```{.sql}
-SELECT condition, COUNT(*)
-FROM conditions
-GROUP BY condition
+SELECT condition_name, COUNT(*) AS [Subjects Available]
+FROM conditions c
+  JOIN patient p ON c.id = p.condition_id
+GROUP BY condition_name
 ORDER BY 2 DESC;
 ```
 
@@ -191,14 +224,16 @@ Returns all melanoma PBMC samples:
 - from patients who have treatment tr1.
 
 ```{.sql}
-SELECT *
-FROM samples
+SELECT 
+FROM samples s
+  JOIN patient p ON p.id = s.patient_id
+  JOIN conditions c ON c.id = p.condition_id
 WHERE condition_name = 'melanoma' 
-  AND sample_type = 'PBMC'
+  AND stype = 'PBMC'
   AND patientid IN (SELECT patientid 
                     FROM patient_treatment 
                     WHERE treatmentid = 'tr1' 
-                      AND GETDate() - tr);
+                      AND time_from_treatment_start = 0);
 ```
 
 
@@ -206,9 +241,10 @@ WHERE condition_name = 'melanoma'
 
 a. How many samples from each project?
 ```{.sql}
-SELECT project_id, COUNT(*) AS [Count]
-FROM samples
-GROUP BY project_id
+SELECT project_name, COUNT(*) AS [Count]
+FROM samples s
+  JOIN project p ON p.id = s.project_id
+GROUP BY project_name
 ORDER BY 2 DESC;
 ```
 
@@ -231,4 +267,12 @@ FROM patient;
 
 
 ## Thank you
-A fun project! And thank you for considering me!
+Fun project!
+
+::: aside
+Contact:
+
+541-797-4068
+
+joshua.liddell21@gmail.com
+:::
