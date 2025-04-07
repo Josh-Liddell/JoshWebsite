@@ -5,7 +5,7 @@ format:
   revealjs: 
     theme: solarized
     scrollable: true
-    footer: "View all files on my [Github](https://github.com/Josh-Liddell/cell-counts)"
+    footer: "Use arrow keys <- ->"
     transition: slide
     transition-speed: fast
     # css: styles.css
@@ -47,6 +47,10 @@ df2 = df2.sort_values(
 
 df2.to_csv('output.csv', index=False)
 ```
+::: footer
+View all files on my [Github](https://github.com/Josh-Liddell/cell-counts)
+:::
+
 
 ## CSV Preview {.smaller}
 <br><br>
@@ -82,8 +86,9 @@ df2.head()
 ```
 
 
-
-
+::: footer
+View all files on my [Github](https://github.com/Josh-Liddell/cell-counts)
+:::
 
 
 
@@ -108,8 +113,9 @@ filtered_df['response'] = filtered_df['response'].replace({'y': 'responder', 'n'
 fig = px.box(filtered_df, x="population", y="relative_freq", points="all", color='response')
 fig.show()
 ```
-
-
+::: footer
+View all files on my [Github](https://github.com/Josh-Liddell/cell-counts)
+:::
 
 
 
@@ -156,7 +162,9 @@ fig = px.box(filtered_df, x="population", y="relative_freq", points="all", color
 fig.update_layout(width=1000, height=500)
 fig.show()
 ```
-
+::: footer
+View all files on my [Github](https://github.com/Josh-Liddell/cell-counts)
+:::
 
 
 
@@ -168,6 +176,9 @@ fig.show()
 - In the case of b_cell we can see that the values for non-responders cover a much broader range of rel_freq values than the responder values that are clustered much closer together.
 :::
 
+::: footer
+View all files on my [Github](https://github.com/Josh-Liddell/cell-counts)
+:::
 
  
 
@@ -190,6 +201,11 @@ fig.show()
   });
 </script>
 
+::: footer
+View all files on my [Github](https://github.com/Josh-Liddell/cell-counts)
+:::
+
+
 
 ## Database Advantages {.smaller}
 It is important to structure the database well especially when we are talking about hundreds of projects, patients, and samples. 
@@ -201,6 +217,9 @@ These are things that need to be taken into account when making a database. Desi
 
 I chose to design my database this way because it organizes the data efficiently, ensures data integrity through normalization, and allows for scalable relationships between entities, making future queries and updates easier to manage.
 
+::: footer
+View all files on my [Github](https://github.com/Josh-Liddell/cell-counts)
+:::
 
 
 
@@ -215,7 +234,9 @@ FROM conditions c
 GROUP BY condition_name
 ORDER BY 2 DESC;
 ```
-
+::: footer
+View all files on my [Github](https://github.com/Josh-Liddell/cell-counts)
+:::
 
 ## Query 2
 Returns all melanoma PBMC samples:
@@ -235,7 +256,9 @@ WHERE condition_name = 'melanoma'
                     WHERE treatmentid = 'tr1' 
                       AND time_from_treatment_start = 0);
 ```
-
+::: footer
+View all files on my [Github](https://github.com/Josh-Liddell/cell-counts)
+:::
 
 ## Additional Queries
 
@@ -263,7 +286,9 @@ SELECT
   COUNT(CASE WHEN sex = 'F' THEN 1 END) AS female_count
 FROM patient;
 ```
-
+::: footer
+View all files on my [Github](https://github.com/Josh-Liddell/cell-counts)
+:::
 
 
 ## Thank you
@@ -275,4 +300,8 @@ Contact:
 541-797-4068
 
 joshua.liddell21@gmail.com
+:::
+
+::: footer
+View all files on my [Github](https://github.com/Josh-Liddell/cell-counts)
 :::
