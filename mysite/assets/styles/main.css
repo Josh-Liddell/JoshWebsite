@@ -1,23 +1,49 @@
 body {
-    background-color: #0f1519;
-    color: white;              
-    font-family: sans-serif;  
-    margin: 0;               
-    padding: 0;
-
-    /* flexbox */
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-
+  display: flex;
+  flex-direction: column;
+  background-color: #0f1519;
+  color: white;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* main {
-  text-align: center;
-} */
+main {
+    display: flex;
+    justify-content: center;
+    height: 200vh;
+}
+
+h1 {
+  padding: 0;
+  margin-top: 0;
+}
+
+.mainitems {
+  /* background-color: gray; */
+
+  /* Responsive layout */
+  width: 70vw;              
+  max-width: 75rem;         
+  min-width: 34rem;      
+
+  /* Spacing */
+  margin-top: 5rem;         
+  margin-left: auto;        
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: column;
+}
 
 .site-header {
-  background-color: #002ea3;
+  /* background-color: #002ea3; */
+  /* background: linear-gradient(to right, rgba(0, 124, 240, 0.6), rgba(0, 223, 216, 0.6)); */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: linear-gradient(to right, rgba(0, 52, 240), rgba(0, 123, 223));
   color: white;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -25,22 +51,33 @@ body {
   padding-left: 8rem;
 }
 
-.main-content {
+.lower {
+  background-color: #1c262d;
+  padding: 2rem;
+  margin-top: auto;
   text-align: center;
-  height: 100vh;
+  height: 30vh;
 }
 
-
-.diagonal-section {
-  background-color: #141b1f;
-  height: 100vh;
-  /* width: 100vw; */
-  /* clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%); */
-  margin-top: 20px;
-
+.card1 {
+  /* background-color: rgb(76, 81, 81); */
+  background: linear-gradient(to right, rgba(0, 124, 240, 0.5), rgba(0, 156, 223, 0.5));
+  height: 17rem;
+  border-radius: 5px;
+  /* padding-left: 8rem; */
+  margin-bottom: 4rem;
+  
 }
 
-.site-footer {
-  text-align: center;
-  /* background-color: #424445; */
+.card2 {
+  /* background: linear-gradient(to right, rgba(0, 124, 240, 0.5), rgba(0, 156, 223, 0.5)); */
+  background-color: rgb(76, 81, 81);
+  height: 7rem;
+  border-radius: 5px;
+  margin-bottom: 5rem;
+  
+}
+
+.card-inner {
+  padding: 2rem;
 }
