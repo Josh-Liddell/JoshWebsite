@@ -14,7 +14,7 @@ main {
     height: 200vh;
 }
 
-h1 {
+h1, h2 {
   padding: 0;
   margin-top: 0;
 }
@@ -49,6 +49,7 @@ h1 {
   border-bottom-right-radius: 20px;
   height: 64px;
   padding-left: 8rem;
+  font-family: 'Trebuchet MS';
 }
 
 .lower {
@@ -69,15 +70,76 @@ h1 {
   
 }
 
-.card2 {
-  /* background: linear-gradient(to right, rgba(0, 124, 240, 0.5), rgba(0, 156, 223, 0.5)); */
-  background-color: rgb(76, 81, 81);
-  height: 7rem;
-  border-radius: 5px;
-  margin-bottom: 5rem;
-  
-}
-
 .card-inner {
   padding: 2rem;
+}
+
+.card2 {
+  /* background-color: rgb(76, 81, 81); */
+  height: 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  /* flex-wrap: wrap; */
+
+  margin-bottom: 4rem;
+}
+
+.card3 {
+  /* background-color: rgb(76, 81, 81); */
+  height: 20rem; 
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+  /* flex-wrap: wrap; */
+
+  margin-bottom: 4rem;
+}
+
+.box {
+  cursor: pointer;
+  background-color: #1c262d;
+  border: 1px solid #41596c;
+  font-size: 10pt;
+  height: 7rem;
+  width: 20rem;
+  border-radius: 5px;
+}
+
+.box-inner {
+  padding: 1rem;
+}
+
+.box:hover {
+  border: 1px solid #547896;
+}
+
+.box2 {
+  font-size: 10pt;
+  width: 34rem;
+  height: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 1rem;
+  /* background-color: #1c262d; */
+  /* border: 1px solid #41596c; */
+  /* border: 2px solid transparent;  */
+  background: linear-gradient(to right, rgba(117, 34, 130, 0.5), rgba(0, 156, 223, 0.5));
+
+}
+
+.box2-border {
+  font-size: 10pt;
+  width: 34rem;
+  height: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 1rem;
+
+  background: 
+    linear-gradient(#1c262d, #1c262d) padding-box,
+    linear-gradient(to right, blue, rgb(189, 79, 119)) border-box;
+  border: 2px solid transparent;
 }
