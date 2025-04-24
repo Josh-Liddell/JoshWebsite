@@ -14,9 +14,8 @@ main {
     height: 200vh;
 }
 
-h1, h2 {
-  padding: 0;
-  margin-top: 0;
+h2 {
+  margin: 0;
 }
 
 .mainitems {
@@ -45,11 +44,14 @@ h1, h2 {
 
   background: linear-gradient(to right, rgba(0, 52, 240), rgba(0, 123, 223));
   color: white;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   height: 64px;
   padding-left: 8rem;
   font-family: 'Trebuchet MS';
+
+  display: flex;
+  align-items: center;
 }
 
 .lower {
@@ -68,10 +70,22 @@ h1, h2 {
   /* padding-left: 8rem; */
   margin-bottom: 4rem;
   
+  /* display: flex;
+  align-items: center; */
+  position: relative;
 }
 
 .card-inner {
-  padding: 2rem;
+  position: absolute;
+  top: 2rem;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+
+  /* display: flex;
+  flex-direction: column; */
+
+  /* background: red; */
 }
 
 .card2 {
