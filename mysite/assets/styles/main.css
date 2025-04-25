@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -9,9 +13,10 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
-/* WORK ON FIXING THIS USE MIN PROBABLY WATCH VIDEO */
+/* WORK ON FIXING THIS USE MIN PROBABLY WATCH VIDEO (and do same for boxes i think) */
 main {
   width: 70vw;              
   max-width: 75rem;         
@@ -38,16 +43,32 @@ header {
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  /* padding: 0 2rem; */
+
+  box-sizing: border-box;
+  padding-left: 12rem;
+  padding-right: 12rem;
+}
+
+nav a {
+  margin-left: 2rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 footer {
   background-color: #1c262d;
-  padding: 2rem;
+  padding: 20rem;
   margin-top: auto;
   text-align: center;
   width: 100%;
 }
-
 
 h1,
 h2,
@@ -55,9 +76,7 @@ h3 {
   margin: 0;
 }
 
-
 /* FIX font sizes */
-
 .card1 {
   /* background-color: rgb(76, 81, 81); */
   background: linear-gradient(to right, rgba(0, 124, 240, 0.5), rgba(0, 156, 223, 0.5));
@@ -69,21 +88,18 @@ h3 {
 }
 
 .card2 {
-  height: 8rem;
+  height: 7rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  /* flex-wrap: wrap; */
 }
 
 .card3 {
   height: 20rem; 
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
-  gap: 5rem;
-  /* flex-wrap: wrap; */
+  gap: 3rem;
 }
 
 .box {
@@ -106,6 +122,7 @@ h3 {
 }
 
 .box2 {
+  flex-grow: 1;
   font-size: 10pt;
   width: 34rem;
   height: 100%;
@@ -115,6 +132,7 @@ h3 {
 }
 
 .box2-border {
+  flex-grow: 1;
   font-size: 10pt;
   height: 100%;
   width: 34rem;
@@ -132,13 +150,33 @@ h3 {
   gap: 1rem;
 }
 
+.projectboxes {
+  /* height: 13rem; */
+  /* min-height: 800px; */
+  gap: 1.5rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /* align-items: center; */
+  align-content: flex-start;
+
+  /* border: 4px solid red; */
+  
+
+}
+
 .projectbox {
+  flex-grow: 1;
   cursor: pointer;
   background-color: #1c262d;
   border: 1px solid #41596c;
   font-size: 10pt;
-  height: 100%;
-  width: 20rem;
+  /* height: 100%; */
+  height: 250px;
+  width: 250px;
+  min-width: 100px;
+  max-width: 400px;
   border-radius: 5px;
   box-sizing: border-box;
   padding: 1rem;
@@ -146,3 +184,19 @@ h3 {
   text-decoration: none;
   color: inherit;
 }
+
+#projectsection {
+  scroll-margin-top: 5rem;
+}
+
+/* .background-square {
+  width: 0;
+  height: 0;
+  border-left: 5000px solid #141b1f;
+  border-top: 2800px solid transparent;
+  
+  position: absolute;
+  bottom: 0;
+  left: 0; 
+  z-index: -1;
+} */
