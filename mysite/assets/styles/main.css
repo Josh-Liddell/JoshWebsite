@@ -1,6 +1,9 @@
 body {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+
   background-color: #0f1519;
   color: white;
   font-family: sans-serif;
@@ -8,108 +11,79 @@ body {
   padding: 0;
 }
 
+/* WORK ON FIXING THIS USE MIN PROBABLY WATCH VIDEO */
 main {
-    display: flex;
-    justify-content: center;
-    height: 200vh;
-}
-
-h2 {
-  margin: 0;
-}
-
-.mainitems {
-  /* background-color: gray; */
-
-  /* Responsive layout */
   width: 70vw;              
   max-width: 75rem;         
   min-width: 34rem;      
 
-  /* Spacing */
-  margin-top: 5rem;         
-  margin-left: auto;        
-  margin-right: auto;
-
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  gap: 5rem;
 }
 
-.site-header {
-  /* background-color: #002ea3; */
-  /* background: linear-gradient(to right, rgba(0, 124, 240, 0.6), rgba(0, 223, 216, 0.6)); */
+header {
   position: sticky;
   top: 0;
   z-index: 1000;
 
   background: linear-gradient(to right, rgba(0, 52, 240), rgba(0, 123, 223));
-  color: white;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  height: 64px;
-  padding-left: 8rem;
+
+  height: 4rem;
+  width: 100%;
   font-family: 'Trebuchet MS';
 
   display: flex;
   align-items: center;
 }
 
-.lower {
+footer {
   background-color: #1c262d;
   padding: 2rem;
   margin-top: auto;
   text-align: center;
-  height: 30vh;
+  width: 100%;
 }
+
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+
+/* FIX font sizes */
 
 .card1 {
   /* background-color: rgb(76, 81, 81); */
   background: linear-gradient(to right, rgba(0, 124, 240, 0.5), rgba(0, 156, 223, 0.5));
   height: 17rem;
   border-radius: 5px;
-  /* padding-left: 8rem; */
-  margin-bottom: 4rem;
-  
-  /* display: flex;
-  align-items: center; */
   position: relative;
-}
-
-.card-inner {
-  position: absolute;
-  top: 2rem;
-  bottom: 2rem;
-  left: 2rem;
-  right: 2rem;
-
-  /* display: flex;
-  flex-direction: column; */
-
-  /* background: red; */
+  box-sizing: border-box;
+  padding: 2rem;
 }
 
 .card2 {
-  /* background-color: rgb(76, 81, 81); */
   height: 8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 1rem;
   /* flex-wrap: wrap; */
-
-  margin-bottom: 4rem;
 }
 
 .card3 {
-  /* background-color: rgb(76, 81, 81); */
   height: 20rem; 
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  gap: 20px;
+  gap: 5rem;
   /* flex-wrap: wrap; */
-
-  margin-bottom: 4rem;
 }
 
 .box {
@@ -117,13 +91,14 @@ h2 {
   background-color: #1c262d;
   border: 1px solid #41596c;
   font-size: 10pt;
-  height: 7rem;
+  height: 100%;
   width: 20rem;
   border-radius: 5px;
-}
-
-.box-inner {
+  box-sizing: border-box;
   padding: 1rem;
+
+  text-decoration: none;
+  color: inherit;
 }
 
 .box:hover {
@@ -136,24 +111,38 @@ h2 {
   height: 100%;
   cursor: pointer;
   border-radius: 5px;
-  padding: 1rem;
-  /* background-color: #1c262d; */
-  /* border: 1px solid #41596c; */
-  /* border: 2px solid transparent;  */
   background: linear-gradient(to right, rgba(117, 34, 130, 0.5), rgba(0, 156, 223, 0.5));
-
 }
 
 .box2-border {
   font-size: 10pt;
-  width: 34rem;
   height: 100%;
+  width: 34rem;
   cursor: pointer;
   border-radius: 5px;
-  padding: 1rem;
-
   background: 
     linear-gradient(#1c262d, #1c262d) padding-box,
     linear-gradient(to right, blue, rgb(189, 79, 119)) border-box;
   border: 2px solid transparent;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.projectbox {
+  cursor: pointer;
+  background-color: #1c262d;
+  border: 1px solid #41596c;
+  font-size: 10pt;
+  height: 100%;
+  width: 20rem;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 1rem;
+
+  text-decoration: none;
+  color: inherit;
 }
