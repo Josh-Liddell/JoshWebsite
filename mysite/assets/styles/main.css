@@ -13,7 +13,7 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  position: relative;
+  /* position: relative; */
 }
 
 /* WORK ON FIXING THIS USE MIN PROBABLY WATCH VIDEO (and do same for boxes i think) */
@@ -44,7 +44,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* padding: 0 2rem; */
 
   box-sizing: border-box;
   padding-left: 12rem;
@@ -64,10 +63,12 @@ nav a:hover {
 
 footer {
   background-color: #1c262d;
-  padding: 20rem;
-  margin-top: auto;
+  /* padding: 20rem;
+  margin-top: auto; */
   text-align: center;
   width: 100%;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 
 h1,
@@ -162,8 +163,6 @@ h3 {
   align-content: flex-start;
 
   /* border: 4px solid red; */
-  
-
 }
 
 .projectbox {
@@ -188,15 +187,3 @@ h3 {
 #projectsection {
   scroll-margin-top: 5rem;
 }
-
-/* .background-square {
-  width: 0;
-  height: 0;
-  border-left: 5000px solid #141b1f;
-  border-top: 2800px solid transparent;
-  
-  position: absolute;
-  bottom: 0;
-  left: 0; 
-  z-index: -1;
-} */
