@@ -8,19 +8,34 @@ body {
   align-items: center;
   gap: 5rem;
 
-  background-color: #0f1519;
+  /* background-color: #0f1519; */
+
   color: white;
   font-family: sans-serif;
   margin: 0;
   padding: 0;
   /* position: relative; */
+
+  background: linear-gradient(
+    38deg,               /* ← shallow angle */
+    #141b1f 50%,         /* color 1 until 50% */
+    #0f1519 50%          /* color 2 after 50% */
+  );
 }
+
+  /* background-repeat: no-repeat;
+  background-size: cover;
+} */
 
 /* WORK ON FIXING THIS USE MIN PROBABLY WATCH VIDEO (and do same for boxes i think) */
 main {
-  width: 70vw;              
+  /* Minimum, preferred maximum */
+  /* width: clamp(500px, 80vw, 1200px); */
+  width: clamp(500px, calc(90vw - 2rem), 1200px);
+
+  /* width: 70vw;              
   max-width: 75rem;         
-  min-width: 34rem;      
+  min-width: 34rem;       */
 
   display: flex;
   flex-direction: column;
@@ -52,7 +67,7 @@ header {
 
 nav a {
   margin-left: 2rem;
-  color: white;
+  color: inherit;
   text-decoration: none;
   font-weight: bold;
 }
@@ -77,29 +92,42 @@ h3 {
   margin: 0;
 }
 
+.buttons {
+  display: flex;
+  gap: 1rem;
+  /* align-self: flex-end; */
+  margin-top: auto;
+}
+
 /* FIX font sizes */
 .card1 {
   /* background-color: rgb(76, 81, 81); */
   background: linear-gradient(to right, rgba(0, 124, 240, 0.5), rgba(0, 156, 223, 0.5));
   height: 17rem;
   border-radius: 5px;
-  position: relative;
+  /* position: relative; */
   box-sizing: border-box;
   padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
 }
 
+
 .card2 {
-  height: 7rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* flex-direction: column; */
+  /* justify-content: space-between; */
   gap: 1rem;
+  /* flex-wrap: wrap; */
 }
 
 .card3 {
-  height: 20rem; 
+  /* height: 20rem;  */
   display: flex;
-  justify-content: space-between;
+  /* flex-wrap: wrap; */
+  /* justify-content: space-between; */
   gap: 3rem;
 }
 
@@ -108,35 +136,60 @@ h3 {
   background-color: #1c262d;
   border: 1px solid #41596c;
   font-size: 10pt;
-  height: 100%;
-  width: 20rem;
+  height: 7rem;
+  min-width: 10rem;  /* minimum width */
+  flex: 1 1 10rem;   /* flex-grow, flex-shrink, flex-basis */
   border-radius: 5px;
   box-sizing: border-box;
   padding: 1rem;
-
   text-decoration: none;
   color: inherit;
+  transition: border 0.2s ease;
 }
 
 .box:hover {
   border: 1px solid #547896;
 }
 
+@media (max-width: 64rem) { 
+  .card2,
+  .card3 {
+    flex-direction: column;
+  }
+  main {
+    min-width: 500px;
+    width: 95vw;
+  }
+  .logo {
+    display: none;
+  }
+  header {
+    justify-content: center;
+    padding: 0;
+  }
+  nav a {
+    max-width: 100%;
+  }
+}
+
 .box2 {
-  flex-grow: 1;
   font-size: 10pt;
-  width: 34rem;
-  height: 100%;
+
+  /* min-width: 20rem;  */
+  flex: 1 1 20rem;
+  /* width: 34rem; */
+  height: 20rem;
   cursor: pointer;
   border-radius: 5px;
-  background: linear-gradient(to right, rgba(117, 34, 130, 0.5), rgba(0, 156, 223, 0.5));
+  background: linear-gradient(to right, rgba(117, 34, 130), rgba(0, 156, 223));
 }
 
 .box2-border {
-  flex-grow: 1;
   font-size: 10pt;
-  height: 100%;
-  width: 34rem;
+  height: 20rem;
+  min-width: 25rem;  /* minimum width */
+  flex: 1 1 20rem;
+  /* width: 34rem; */
   cursor: pointer;
   border-radius: 5px;
   background: 
@@ -152,36 +205,40 @@ h3 {
 }
 
 .projectboxes {
-  /* height: 13rem; */
-  /* min-height: 800px; */
-  gap: 1.5rem;
-
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  /* align-items: center; */
+  gap: 1.5rem;
+  /* justify-content: center; */
   align-content: flex-start;
-
-  /* border: 4px solid red; */
 }
 
+/* Each individual project box */
 .projectbox {
-  flex-grow: 1;
+  /* flex: 1 1 15rem;
+  min-width: 2rem;
+  max-width: 25rem; 
+  height: 15rem; 
+   */
+   flex-grow: 1;
+  width: clamp(14rem, 20vw, 15rem);
+  height: 15rem;
+
   cursor: pointer;
   background-color: #1c262d;
   border: 1px solid #41596c;
-  font-size: 10pt;
-  /* height: 100%; */
-  height: 250px;
-  width: 250px;
-  min-width: 100px;
-  max-width: 400px;
   border-radius: 5px;
   box-sizing: border-box;
   padding: 1rem;
 
+  font-size: 10pt;
   text-decoration: none;
   color: inherit;
+  transition: border 0.2s ease;
+}
+
+
+.projectbox:hover {
+  border-color: #547896;
 }
 
 #projectsection {
