@@ -14,7 +14,13 @@
   <body>
 
     <header>
-      <h3 class="logo">Joshua Liddell</h3>
+      <!-- <h3 class="logo">Joshua <span style="font-family: LogoFontR">Liddell</span></h3> -->
+      <!-- <a href="index.html" style="text-decoration: none; color: inherit;">
+        <h3 class="logo">Joshua <span style="font-family: LogoFontR">Liddell</span></h3>
+      </a> -->
+      <a href="index.html" class="logo-link" style="text-decoration: none; color: inherit;">
+        <h3 class="logo">Joshua <span style="font-family: LogoFontR">Liddell</span></h3>
+      </a>
       <nav>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
@@ -186,7 +192,7 @@
           <div class="projectbox">
             <div class="heading">
               <img src = "assets/icons/chart-line-up.svg" alt="RocketIcon" class="icon"/>
-              <h2>Coming Soon!</h2>
+              <h2>Cell Data</h2>
             </div>
             <p class="description">A summary of this project</p>
           </div>
@@ -200,6 +206,18 @@
     <footer>
       <p>&copy; 2025 Joshua Liddell</p>
     </footer>
+
+    <script>
+      document.querySelector('.logo-link').addEventListener('click', function(event) {
+        const onIndex = window.location.pathname.endsWith('index.html') || window.location.pathname === '/';
+        if (onIndex) {
+          event.preventDefault();  // Stop link from navigating
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        // Else, let it go to index.html normally
+      });
+    </script>
+    
     
   </body>
 

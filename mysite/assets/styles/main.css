@@ -4,6 +4,12 @@
 }
 
 @font-face {
+  font-family: 'LogoFontR';
+  src: url('/assets/fonts/Comfortaa-Light.ttf') format('truetype');
+}
+
+
+@font-face {
   font-family: 'Curvy';
   src: url('/assets/fonts/Signatra.ttf') format('truetype');
 }
