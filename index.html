@@ -5,53 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Joshua Liddell</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="mysite/favicon.png" type="image/png">
+    <link rel="stylesheet" href="assets/styles/comingsoon.css">
+    <link rel="icon" href="assets/icons/favicon.png" type="image/png">
   </head>
-
   <body>
     <main>
-      
-      <img src="https://img.freepik.com/free-vector/cute-corgi-dog-astronaut-riding-rocket-waving-hand-cartoon-vector-icon-illustration-animal-technology-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-3380.jpg" 
-       alt="Cute dog riding a spaceship" 
-       style="width: 100%; max-width: 400px; border-radius: 20px;">
-      <h1 class="timer" id="countdown">TIMER</h1>
-      <p class="subr">Website coming August 1</p>
-
+        <h1 class="text">Website coming August 1</h1>
+        <h2 class="gradient-text">Come back soon</h2>
     </main>
+      
+      
+    <footer>
+        <a href="main.html">joshliddell.com</a>
+    </footer>
   </body>
-  
-  
-  <script>
-  function updateCountdown() {
-    const endDate = new Date('August 1, 2025 00:00:00').getTime();
-    const now = new Date().getTime();
-    const timeLeft = endDate - now;
-  
-    const countdown = document.getElementById("countdown");
-  
-    if (timeLeft <= 0) {
-      countdown.textContent = "Countdown Complete!";
-      return;
-    }
-  
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
-    const seconds = Math.floor((timeLeft / 1000) % 60);
-  
-    countdown.innerHTML = `
-      <div class="time-block"><div>${days}</div><div class="label">Days</div></div>
-      <div class="colon">:</div>
-      <div class="time-block"><div>${hours}</div><div class="label">Hours</div></div>
-      <div class="colon">:</div>
-      <div class="time-block"><div>${minutes}</div><div class="label">Minutes</div></div>
-      <div class="colon">:</div>
-      <div class="time-block"><div>${seconds}</div><div class="label">Seconds</div></div>
-    `;
-  }
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-  </script>
-  
 </html>

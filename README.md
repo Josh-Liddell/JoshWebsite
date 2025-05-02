@@ -1,2 +1,2 @@
 # GitHub Pages Website
-My Portfolio Website
+My Personal Website

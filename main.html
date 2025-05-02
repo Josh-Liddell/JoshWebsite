@@ -14,10 +14,6 @@
   <body>
 
     <header>
-      <!-- <h3 class="logo">Joshua <span style="font-family: LogoFontR">Liddell</span></h3> -->
-      <!-- <a href="index.html" style="text-decoration: none; color: inherit;">
-        <h3 class="logo">Joshua <span style="font-family: LogoFontR">Liddell</span></h3>
-      </a> -->
       <a href="index.html" class="logo-link" style="text-decoration: none; color: inherit;">
         <h3 class="logo">Joshua <span style="font-family: LogoFontR">Liddell</span></h3>
       </a>
@@ -71,14 +67,12 @@
           </div>
           <p class="description">The technologies and tools I specialize in</p>
         </a>
-        <a href="https://github.com/josh-liddell" target="_blank" rel="noopener noreferrer" class="box">
+        <a href="learning.html" class="box">
           <div class="heading">
             <img src = "assets/icons/graduation-cap.svg" alt="RocketIcon" class="icon"/>
             <h2>Today I Learned</h2>
           </div>
           <p class="description">Quick insights and lessons from my daily learning journey</p>
-
-          
         </a>
       </div>
 
@@ -209,7 +203,7 @@
 
     <script>
       document.querySelector('.logo-link').addEventListener('click', function(event) {
-        const onIndex = window.location.pathname.endsWith('index.html') || window.location.pathname === '/';
+        const onIndex = window.location.pathname.endsWith('main.html') || window.location.pathname === '/';
         if (onIndex) {
           event.preventDefault();  // Stop link from navigating
           window.scrollTo({ top: 0, behavior: 'smooth' });
