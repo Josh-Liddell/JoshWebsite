@@ -16,8 +16,6 @@ function ProjectCard({ icon, title, description }) {
 export default ProjectCard;
 
 
-
-
 {/* <p class="description">
     Custom CLI tool for detecting trangular arbitrage opportunity
     <!-- Created a CLI tool in Python that uses triangular arbitrage to detect profitable trading opportunities between currency pairs by continuously monitoring exchange rates and identifying price discrepancies -->

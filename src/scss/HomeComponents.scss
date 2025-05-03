@@ -1,14 +1,112 @@
 @import 'colors';
 @import 'fonts';
+@import 'buttons';
 
 
 // Intro Card
+.intro-card {
+    display: flex;
+    flex-direction: column;
 
+    background: $card-blue;
+    height: 17rem;
+    border-radius: 5px;
+    padding: 2rem;
+
+    p {
+        margin-top: 0.5rem;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: auto;
+    }
+}
 
 // Info Card
+.info-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+    background-color: $card-bg;
+    border: 1px solid $card-bdr;
 
+    font-size: 0.8rem;
+    min-width: 10rem;
+    flex: 1 1 10rem;   // flex-grow, flex-shrink, flex-basis
+    border-radius: 5px;
+    padding: 1rem;
+    transition: border 0.2s ease;
+
+    p {
+        color: #9fafbb;
+        font-size: 1rem;
+    }
+
+    .heading {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .icon {
+        width: 1.5rem;
+        height: auto;
+        filter: brightness(0) invert(1);
+        align-self: flex-start;
+    }
+
+    &:hover {
+        border: 1px solid $card-bdr2;
+    }
+}
 
 // Color Card
+.color-card {
+    flex: 1 1 20rem;
+    height: 20rem;
+    border-radius: 5px;
+    background: linear-gradient(to right, rgba(117, 34, 130), rgba(0, 156, 223));
+}
+
+.color-card2 {
+    flex: 1 1 20rem;
+    height: 20rem;
+
+    --borderWidth: 3px;
+    background: #1c262d;
+    position: relative;
+    border-radius: var(--borderWidth);
+
+}
+
+.color-card2:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 10s ease alternate infinite;
+    background-size: 300% 300%;
+}
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
 
 // Color Card 2
