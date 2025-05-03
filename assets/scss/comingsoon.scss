@@ -1,5 +1,7 @@
+@import "partials/colors";
+
 body {
-    background-color: #0f1519;
+    background-color: $color-bg;
     color: rgb(217, 213, 213);
     margin: 0;
     padding: 0;
@@ -29,7 +31,7 @@ body {
   
   footer {
     width: 100%;
-    background-color: #141b1f;
+    background-color: $color-bg2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,7 +48,7 @@ body {
   }
   
   .gradient-text {
-    background: linear-gradient(to right, rgb(212, 0, 255), rgb(0, 98, 255));
+    background: $pink-blue;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
@@ -54,7 +56,3 @@ body {
     font-size: clamp(1.6rem, 3vw, 6rem);
     margin: 0;
   }
-  
-  
-  
-  

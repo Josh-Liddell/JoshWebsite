@@ -1,0 +1,14 @@
+@import "partials/colors";
+@import "partials/fonts";
+@import "partials/header";
+
+body {
+    background-color: $color-bg;
+    color: $color-text;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+  }
