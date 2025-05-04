@@ -1,6 +1,8 @@
 # GitHub Pages Website
 
-My Personal Website
+Source code for my personal website, built using react.
+
+Visit the site [here](https://joshliddell.com)
 
 <!--
 # React + Vite
