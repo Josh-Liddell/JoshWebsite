@@ -1,35 +1,28 @@
-scratch/
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Ignore Jekyll build folder
-_site/
+node_modules
+dist
+dist-ssr
+*.local
 
-# Ignore Jekyll cache files
-.jekyll-cache/
-
-# Ignore temporary files created by editors
-*.swp
-*.sublime-project
-*.sublime-workspace
-*.vscode/
-*~
-
-# Ignore logs and temporary files
-.log
-*.tmp
-*.bak
-
-# Ignore bundle dependencies (if you're using Bundler)
-vendor/
-.bundle/
-
-# Ignore Gemfile.lock if you want to keep Gemfile platform-independent
-Gemfile.lock
-
-# Ignore system-specific files
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
 .DS_Store
-Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# Ignore Ruby temporary files
-*.gem
-
-.sass-cache
+#Other
+Josh-Liddell.github.io
+scratch
