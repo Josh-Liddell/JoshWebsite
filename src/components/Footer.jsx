@@ -1,16 +1,11 @@
-import '../scss/Footer.scss';
+import "../scss/Footer.scss";
 
 function Footer() {
-    return (
-      <nav className="footer">
-        <h1>My Site</h1>
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
-      </nav>
-    );
-  }
-  
+  return (
+    <footer>
+      <p>&copy; 2025 Joshua Liddell</p>
+    </footer>
+  );
+}
+
 export default Footer;

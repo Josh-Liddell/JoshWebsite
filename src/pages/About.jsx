@@ -1,13 +1,11 @@
-import '../scss/About.scss'
-
+import "../scss/About.scss";
 
 function About() {
-
   return (
-    <main>
+    <>
       <p>About page!</p>
-    </main>
-  )
+    </>
+  );
 }
 
-export default About
+export default About;

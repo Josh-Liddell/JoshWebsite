@@ -5,7 +5,7 @@ function ProjectCard({ icon, title, description }) {
   return (
     <div className="project-card">
       <div className="heading">
-        <img src={icon} alt="Terminal" className="icon"/>
+        <img src={icon} alt="CardIcon" className="icon"/>
         <h2>{title}</h2>
       </div>
       <p>{description}</p>
