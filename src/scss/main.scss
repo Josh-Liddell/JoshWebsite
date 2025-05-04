@@ -1,4 +1,16 @@
-@use './colors' as *;
+// Abstracts
+@use 'abstracts/colors' as *;
+
+// Components
+@use 'components/navbar';
+@use 'components/footer';
+@use 'components/homecards';
+@use 'components/buttons';
+
+// Pages
+@use 'pages/home';
+@use 'pages/about';
+@use 'pages/comingsoon';
 
 * {
   margin: 0;
@@ -18,6 +30,14 @@ a {
   color: inherit;
 }
 
+.App {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+}
+
+
+// NOTES FOR LATER
 
 // :root {
 //   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

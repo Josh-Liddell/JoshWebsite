@@ -1,5 +1,6 @@
-@use './colors' as *;
-@use './fonts' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/fonts' as *;
+
 
 nav {
     position: sticky;

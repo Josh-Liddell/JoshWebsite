@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "../scss/ComingSoon.scss";
 
 function About() {
   return (

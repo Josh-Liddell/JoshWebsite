@@ -1,4 +1,6 @@
-@use './colors' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/fonts' as *;
+
 
 .coming-soon {
     height: 100vh;

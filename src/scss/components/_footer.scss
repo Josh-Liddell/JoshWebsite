@@ -1,4 +1,5 @@
-@use './colors' as *;
+@use '../abstracts/colors' as *;
+@use '../abstracts/fonts' as *;
 
 footer {
     background-color: $footer-bg;

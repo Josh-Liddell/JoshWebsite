@@ -1,6 +1,4 @@
-import { Link } from 'react-router-dom';
-import '../../scss/HomeComponents.scss'
-
+import { Link } from "react-router-dom";
 
 function IntroCard() {
   return (
@@ -9,10 +7,15 @@ function IntroCard() {
       <p>I am a software developer and tech enthusiast</p>
       <p>Here you can learn about me, check out my projects, and explore!</p>
       <div className="buttons">
-        <Link to='/about' class="button1">
+        <Link to="/about" class="button1">
           About
         </Link>
-        <a href="https://github.com/josh-liddell" target="_blank" rel="noopener noreferrer" class="button1">
+        <a
+          href="https://github.com/josh-liddell"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button1"
+        >
           Contact
         </a>
       </div>
@@ -21,7 +24,6 @@ function IntroCard() {
 }
 
 export default IntroCard;
-
 
 // <div class="card1">
 //       <h1>➥ Hi, I'm Joshua</h1>
@@ -36,5 +38,5 @@ export default IntroCard;
 //           Contact
 //         </a>
 //       </div>
-    
+
 //     </div>

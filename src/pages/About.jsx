@@ -1,5 +1,3 @@
-import "../scss/About.scss";
-
 function About() {
   return (
     <>

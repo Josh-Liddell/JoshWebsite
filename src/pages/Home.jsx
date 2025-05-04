@@ -1,4 +1,3 @@
-import "../scss/Home.scss";
 import IntroCard from "../components/HomeCards/IntroCard";
 import InfoCard from "../components/HomeCards/InfoCard";
 import ColorCard from "../components/HomeCards/ColorCard";
