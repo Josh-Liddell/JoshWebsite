@@ -1,19 +1,30 @@
 @font-face {
-    font-family: 'LogoFont';
-    src: url('../assets/fonts/Comfortaa-Bold.ttf') format('truetype');
-  }
-  
-  @font-face {
-    font-family: 'LogoFontLight';
-    src: url('../assets/fonts/Comfortaa-Light.ttf') format('truetype');
-  }
-  
-  @font-face {
-    font-family: 'Curvy';
-    src: url('../assets/fonts/Signatra.ttf') format('truetype');
-  }
+  font-family: 'LogoFont';
+  src: url('../assets/fonts/Comfortaa-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'LogoFontLight';
+  src: url('../assets/fonts/Comfortaa-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Curvy';
+  src: url('../assets/fonts/Signatra.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Shrikhand';
+  src: url('../assets/fonts/Shrikhand-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GlacialBold';
+  src: url('../assets/fonts/GlacialIndifference-Bold.otf') format('opentype');
+}
 
 
 // === Font Variables ===
 $logo-font1: 'Logofont';
 $logo-font2: 'LogofontLight';
+$github-font: 'Shrikhand';

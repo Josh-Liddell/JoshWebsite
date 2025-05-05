@@ -70,6 +70,35 @@
     height: 20rem;
     border-radius: 5px;
     background: linear-gradient(to right, rgba(117, 34, 130), rgba(0, 156, 223));
+
+    // display: flex;
+    position: relative;
+    overflow: hidden;
+
+    img {
+        width: 18rem;
+        height: 18rem;
+        position: absolute; top: -2rem; right: -2rem;
+        transform: rotate(-15deg);
+    }
+
+    .card-text {
+        position: absolute; bottom: 2.5rem; left: 2rem;
+        line-height: 1;
+    }
+
+    .card-text p:nth-child(1) {
+        font-family: 'GlacialBold';
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .card-text p:nth-child(2) {
+        font-family: $github-font;
+        font-size: 5rem;
+        
+    }
+
 }
 
 .color-card2 {

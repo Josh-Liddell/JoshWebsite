@@ -18,7 +18,7 @@ function Home() {
         <ColorCard type={2} />
       </div>
       <div className="project-section">
-        <p>Browse my Projects</p>
+        <p className="title">Browse my Projects</p>
         <div className="project-cards">
           {projectCards.map((card, index) => (
             <ProjectCard key={index} {...card} />
