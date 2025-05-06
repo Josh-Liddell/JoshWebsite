@@ -66,13 +66,22 @@
 
 
 // Color Cards (big cards)
-.color-card {
-    flex: 1 1 20rem;
+.perspective-container {
+    perspective: 800px;
+
     height: 20rem;
+    flex: 1 1 20rem;
+
+    display: flex;
+    
+}
+
+.color-card {
+    height: 100%;
+    width: 100%;
     border-radius: 5px;
     background: linear-gradient(to right, rgba(117, 34, 130), rgba(0, 156, 223));
 
-    // display: flex;
     position: relative;
     overflow: hidden;
 
@@ -103,14 +112,9 @@
     }
 
     &:hover {
-        transform: rotateX(var(--x-rotation)) rotateY(var(--y-rotation)) scale(1.05);
+        transform: rotateX(var(--x-rotation)) rotateY(var(--y-rotation));
     }
 }
-
-
-
-
-
 
 .color-card2 {
     flex: 1 1 20rem;

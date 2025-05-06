@@ -7,34 +7,42 @@ function ColorCard({ type }) {
 
   if (type == 1)
     return (
-      <a
-        href="https://github.com/josh-liddell"
-        className="color-card"
-        onMouseLeave={() => (boundingRef.current = null)}
-        onMouseEnter={(ev) => {
-          boundingRef.current = ev.currentTarget.getBoundingClientRect();
-        }}
-        onMouseMove={(ev) => {
-          if (!boundingRef.current) return;
-          const x = ev.clientX - boundingRef.current.left;
-          const y = ev.clientY - boundingRef.current.top;
-          const xPercentage = x / boundingRef.current.width;
-          const yPercentage = y / boundingRef.current.height;
-          const xRotation = (xPercentage - 0.5) * 8;
-          const yRotation = (0.5 - yPercentage) * 8;
+      <div className="perspective-container">
+        <a
+          href="https://github.com/josh-liddell"
+          className="color-card"
+          onMouseLeave={() => (boundingRef.current = null)}
+          onMouseEnter={(ev) => {
+            boundingRef.current = ev.currentTarget.getBoundingClientRect();
+          }}
+          onMouseMove={(ev) => {
+            if (!boundingRef.current) return;
+            const x = ev.clientX - boundingRef.current.left;
+            const y = ev.clientY - boundingRef.current.top;
+            const xPercentage = x / boundingRef.current.width;
+            const yPercentage = y / boundingRef.current.height;
+            const xRotation = (xPercentage - 0.5) * 12;
+            const yRotation = (0.5 - yPercentage) * 12;
 
-          ev.currentTarget.style.setProperty("--x-rotation", `${yRotation}deg`);
-          ev.currentTarget.style.setProperty("--y-rotation", `${xRotation}deg`);
-          ev.currentTarget.style.setProperty("--x", `${xPercentage * 100}%`);
-          ev.currentTarget.style.setProperty("--y", `${yPercentage * 100}%`);
-        }}
-      >
-        <img src={Github} alt="GitHubIcon" />
-        <div className="card-text">
-          <p>Visit my</p>
-          <p>GitHub</p>
-        </div>
-      </a>
+            ev.currentTarget.style.setProperty(
+              "--x-rotation",
+              `${yRotation}deg`
+            );
+            ev.currentTarget.style.setProperty(
+              "--y-rotation",
+              `${xRotation}deg`
+            );
+            ev.currentTarget.style.setProperty("--x", `${xPercentage * 100}%`);
+            ev.currentTarget.style.setProperty("--y", `${yPercentage * 100}%`);
+          }}
+        >
+          <img src={Github} alt="GitHubIcon" />
+          <div className="card-text">
+            <p>Visit my</p>
+            <p>GitHub</p>
+          </div>
+        </a>
+      </div>
     );
   return (
     <Link to="/about" className="color-card2">
