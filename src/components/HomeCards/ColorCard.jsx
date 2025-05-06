@@ -1,18 +1,46 @@
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 import Github from "../../assets/icons/github-mark-white.svg";
 
 function ColorCard({ type }) {
+  const boundingRef = useRef(null);
+
   if (type == 1)
     return (
-      <a href="https://github.com/josh-liddell" className="color-card">
+      <a
+        href="https://github.com/josh-liddell"
+        className="color-card"
+        onMouseLeave={() => (boundingRef.current = null)}
+        onMouseEnter={(ev) => {
+          boundingRef.current = ev.currentTarget.getBoundingClientRect();
+        }}
+        onMouseMove={(ev) => {
+          if (!boundingRef.current) return;
+          const x = ev.clientX - boundingRef.current.left;
+          const y = ev.clientY - boundingRef.current.top;
+          const xPercentage = x / boundingRef.current.width;
+          const yPercentage = y / boundingRef.current.height;
+          const xRotation = (xPercentage - 0.5) * 8;
+          const yRotation = (0.5 - yPercentage) * 8;
+
+          ev.currentTarget.style.setProperty("--x-rotation", `${yRotation}deg`);
+          ev.currentTarget.style.setProperty("--y-rotation", `${xRotation}deg`);
+          ev.currentTarget.style.setProperty("--x", `${xPercentage * 100}%`);
+          ev.currentTarget.style.setProperty("--y", `${yPercentage * 100}%`);
+        }}
+      >
         <img src={Github} alt="GitHubIcon" />
         <div className="card-text">
-          <p>View my</p>
+          <p>Visit my</p>
           <p>GitHub</p>
         </div>
       </a>
     );
-  return <Link to="/about" className="color-card2"></Link>;
+  return (
+    <Link to="/about" className="color-card2">
+      <h1>GAMES</h1>
+    </Link>
+  );
 }
 
 export default ColorCard;

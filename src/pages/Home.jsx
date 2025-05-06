@@ -14,6 +14,12 @@ function Home() {
         ))}
       </div>
       <div className="color-cards">
+        {/* <div className="container">
+          <ColorCard type={1} />
+        </div>
+        <div className="container">
+          <ColorCard type={2} />
+        </div> */}
         <ColorCard type={1} />
         <ColorCard type={2} />
       </div>

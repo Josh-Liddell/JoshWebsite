@@ -20,8 +20,10 @@ nav {
     justify-content: space-between;
   
     box-sizing: border-box;
-    padding-left: 12rem;
-    padding-right: 12rem;
+    // padding-left: 12rem;
+    // padding-right: 12rem;
+    padding-inline-start: clamp(1rem, 5vw, 10rem);
+    padding-inline-end: clamp(1rem, 5vw, 10rem);
 }
   
 .navigator {

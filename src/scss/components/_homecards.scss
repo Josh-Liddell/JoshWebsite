@@ -38,7 +38,7 @@
     flex: 1 1 10rem;   // flex-grow, flex-shrink, flex-basis
     border-radius: 5px;
     padding: 1rem;
-    transition: border 0.2s ease;
+    transition: 0.2s ease;
 
     p {
         color: #9fafbb;
@@ -60,6 +60,7 @@
 
     &:hover {
         border: 1px solid $card-bdr2;
+        scale: 1.02;
     }
 }
 
@@ -74,6 +75,8 @@
     // display: flex;
     position: relative;
     overflow: hidden;
+
+    transition: transform 0.3s ease-out;
 
     img {
         width: 18rem;
@@ -99,7 +102,15 @@
         
     }
 
+    &:hover {
+        transform: rotateX(var(--x-rotation)) rotateY(var(--y-rotation)) scale(1.05);
+    }
 }
+
+
+
+
+
 
 .color-card2 {
     flex: 1 1 20rem;
@@ -110,6 +121,17 @@
     position: relative;
     border-radius: var(--borderWidth);
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        // font-family: Arcade;
+        font-size: 4rem;
+        color: white;
+        line-height: 1;
+
+    }
 }
 
 .color-card2:after {
