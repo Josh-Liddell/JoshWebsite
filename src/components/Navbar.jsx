@@ -10,10 +10,10 @@ function Navbar() {
       </Link>
       <div className="navigator">
         <Link to="/about">About</Link>
-        <Link to="/experience">Experience</Link>
-        <Link to="/projects">Projects</Link>
-        <Link to="/stack">Stack</Link>
-        <Link to="/games">Games</Link>
+        <Link to="/home">Experience</Link>
+        <Link to="/home">Projects</Link>
+        <Link to="/home">Stack</Link>
+        <Link to="/home">Games</Link>
       </div>
     </nav>
   );

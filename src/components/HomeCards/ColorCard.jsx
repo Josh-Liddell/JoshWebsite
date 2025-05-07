@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import Github from "../../assets/icons/github-mark-white.svg";
+import Pool from "../../assets/icons/billiards.png";
 
 function ColorCard({ type }) {
   const boundingRef = useRef(null);
@@ -46,7 +47,12 @@ function ColorCard({ type }) {
     );
   return (
     <Link to="/about" className="color-card2">
-      <h1>GAMES</h1>
+      {/* <p>Explore my</p> */}
+      <div className="games-container">
+        <img src={Pool} alt="GitHubIcon" />
+        <p>Explore</p>
+        <h1>GAMES</h1>
+      </div>
     </Link>
   );
 }
