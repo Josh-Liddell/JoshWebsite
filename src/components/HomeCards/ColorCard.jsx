@@ -3,7 +3,7 @@ import { useRef } from "react";
 import Github from "../../assets/icons/github-mark-white.svg";
 import Pool from "../../assets/icons/billiards.png";
 
-function ColorCard({ type }) {
+export default function ColorCard({ type }) {
   const boundingRef = useRef(null);
 
   if (type == 1)
@@ -11,6 +11,8 @@ function ColorCard({ type }) {
       <div className="perspective-container">
         <a
           href="https://github.com/josh-liddell"
+          target="_blank"
+          rel="noopener noreferrer"
           className="color-card"
           onMouseLeave={() => (boundingRef.current = null)}
           onMouseEnter={(ev) => {
@@ -56,5 +58,3 @@ function ColorCard({ type }) {
     </Link>
   );
 }
-
-export default ColorCard;

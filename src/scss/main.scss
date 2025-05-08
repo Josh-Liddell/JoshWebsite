@@ -10,6 +10,7 @@
 // Pages
 @use 'pages/home';
 @use 'pages/about';
+@use 'pages/games';
 @use 'pages/comingsoon';
 
 * {
@@ -22,7 +23,7 @@ body {
   background-color: $color-bg;
   color: $color-text;
   font-family: sans-serif;
-  background: linear-gradient(38deg, $color-bg2 50%, $color-bg 50%);
+  // background: linear-gradient(38deg, $color-bg2 50%, $color-bg 50%);
 }
 
 a {

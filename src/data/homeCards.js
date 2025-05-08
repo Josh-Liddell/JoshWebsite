@@ -20,21 +20,25 @@ export const infoCards = [
     icon: Rocket,
     title: "Experience",
     description: "A summary of my work history, roles, and skills developed",
+    link: "/experience",
   },
   {
     icon: Book,
     title: "Projects",
     description: "Showcasing my coding, design, and problem solving skills",
+    link: "/about",
   },
   {
     icon: Chart,
     title: "Stack",
     description: "The technologies and tools I specialize in",
+    link: "/stack",
   },
   {
     icon: Hat,
     title: "Today I Learned",
     description: "Quick insights and lessons from my daily learning journey",
+    link: "/about",
   },
 ];
 

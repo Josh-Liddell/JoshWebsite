@@ -1,22 +1,20 @@
 import { Link } from "react-router-dom";
 
-function Navbar() {
+export default function Navbar({ onContinue }) {
   return (
     <nav>
-      <Link to="/">
+      <p onClick={onContinue}>
         <h3 className="logo">
           Joshua <span>Liddell</span>
         </h3>
-      </Link>
+      </p>
       <div className="navigator">
         <Link to="/about">About</Link>
-        <Link to="/home">Experience</Link>
-        <Link to="/home">Projects</Link>
-        <Link to="/home">Stack</Link>
-        <Link to="/home">Games</Link>
+        <Link to="/experience">Experience</Link>
+        <Link to="/">Projects</Link>
+        <Link to="/stack">Stack</Link>
+        <Link to="/games">Games</Link>
       </div>
     </nav>
   );
 }
-
-export default Navbar;

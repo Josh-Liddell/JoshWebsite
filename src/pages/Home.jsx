@@ -4,7 +4,7 @@ import ColorCard from "../components/HomeCards/ColorCard";
 import ProjectCard from "../components/HomeCards/ProjectCard";
 import { infoCards, projectCards } from "../data/homeCards";
 
-function Home() {
+export default function Home() {
   return (
     <main>
       <IntroCard />
@@ -28,5 +28,3 @@ function Home() {
     </main>
   );
 }
-
-export default Home;

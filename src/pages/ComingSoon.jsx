@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function About() {
+export default function ComingSoon({ onContinue }) {
   return (
     <div className="coming-soon">
       <div className="titles">
@@ -8,10 +8,9 @@ function About() {
         <h2 class="gradient-text">Come back soon</h2>
       </div>
       <div className="foot">
-        <Link to="/home">joshliddell.com</Link>
+        {/* <Link to="/">joshliddell.com</Link> */}
+        <p onClick={onContinue}>joshliddell.com</p>
       </div>
     </div>
   );
 }
-
-export default About;
