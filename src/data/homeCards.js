@@ -26,7 +26,6 @@ export const infoCards = [
     icon: Book,
     title: "Projects",
     description: "Showcasing my coding, design, and problem solving skills",
-    link: "/about",
   },
   {
     icon: Chart,
