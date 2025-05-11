@@ -7,7 +7,7 @@ import { useRef } from "react";
 
 export default function Home() {
   return (
-    <main>
+    <div className="home-elements">
       <IntroCard />
       <div className="info-cards">
         {infoCards.map((card, index) => (
@@ -26,6 +26,6 @@ export default function Home() {
           ))}
         </div>
       </div>
-    </main>
+    </div>
   );
 }

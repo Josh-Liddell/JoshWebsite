@@ -218,6 +218,12 @@
         font-size: 1rem;
     }
 
+    a {
+            text-decoration: underline;
+            color: #1690e7;
+            font-size: 1rem;
+    }
+
     .heading {
         display: flex;
         gap: 1rem;
@@ -234,4 +240,25 @@
     &:hover {
         border: 1px solid $card-bdr2;
     }
+
+     .bullets {
+        display: flex;
+        flex-direction: column;
+        margin-top: auto;
+        gap: 1.2rem;
+
+        .point {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+
+            img {
+                width: 0.7rem;
+                height: 0.7rem;
+                // filter: brightness(0) invert(1);
+                filter: brightness(0) saturate(100%) invert(51%) sepia(17%) saturate(427%) hue-rotate(166deg) brightness(91%) contrast(88%);
+            }
+        }
+    }
 }
+

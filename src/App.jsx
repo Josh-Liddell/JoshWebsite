@@ -11,6 +11,7 @@ import Games from "./pages/Games";
 import Experience from "./pages/Experience";
 import Stack from "./pages/Stack";
 import ComingSoon from "./pages/ComingSoon";
+import Triangle from "./components/Triangles";
 
 export default function App() {
   const [showComingSoon, setShowComingSoon] = useState(true);
@@ -26,14 +27,20 @@ export default function App() {
     <div className="App">
       <Navbar onContinue={switchy} />
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/games" element={<Games />} />
-        <Route path="/experience" element={<Experience />} />
-        <Route path="/stack" element={<Stack />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+
+      <div className="main-body">
+        <Triangle />
+        <Triangle type={2} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/games" element={<Games />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/stack" element={<Stack />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+
       <Footer />
     </div>
   );

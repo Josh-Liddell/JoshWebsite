@@ -35,8 +35,37 @@ a {
   color: inherit;
 }
 
+
+
+// app.scss
 .App {
     display: flex;
     flex-direction: column;
     // align-items: center;
+}
+
+
+// THE DANGER EXPERIMENTATION ZONE:
+
+
+.main-body {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  
+}
+
+.triangle-svg {
+  position: absolute;
+  z-index: -1;
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  fill: $color-bg2;
+
 }

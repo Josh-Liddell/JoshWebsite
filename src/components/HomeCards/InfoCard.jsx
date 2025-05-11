@@ -5,9 +5,11 @@ export default function InfoCard({ icon, title, description, link }) {
     if (title === "Projects") {
       e.preventDefault(); // Preventing navigation
       const element = document.querySelector("#projects");
-      element.scrollIntoView({
-        behavior: "smooth",
-      });
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
     }
   };
 
