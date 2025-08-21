@@ -4,7 +4,7 @@ function About() {
   return (
     <div className="about">
       <p>About page!</p>
-      <img src={Josh} alt="JoshFace" />
+      {/* <img src={Josh} alt="JoshFace" /> */}
     </div>
   );
 }

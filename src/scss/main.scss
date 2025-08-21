@@ -21,6 +21,7 @@
 
 html {
   scroll-padding-top: 5rem;
+  font-size: 100%;
 }
 
 body {
@@ -68,4 +69,22 @@ a {
 
   fill: $color-bg2;
 
+}
+
+/* Base (4K and above) */
+// html {
+//   font-size: 100%;
+// }
+
+// /* For monitors smaller than ~2560px wide (1440p and 1080p) */
+// @media (max-width: 2560px) {
+//   html {
+//     font-size: 80%; /* scales everything down */
+//   }
+// }
+
+@media (max-resolution: 150dpi) {
+  html {
+    font-size: 80%;
+  }
 }
