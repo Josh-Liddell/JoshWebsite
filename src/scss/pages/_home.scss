@@ -7,7 +7,9 @@
     flex-direction: column;
     justify-content: center;
     
-    width: clamp(500px, calc(90vw - 2rem), 1200px);
+    // width: clamp(500px, calc(90vw - 2rem), 1200px);
+    width: clamp(31.25rem, calc(90vw - 2rem), 75rem);
+
     gap: 5rem;
     margin-top: 5rem;
     margin-bottom: 5rem;
